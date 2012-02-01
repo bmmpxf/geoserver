@@ -7,9 +7,9 @@ If you are using an external security subsystem, you may want to disable the bui
 
 .. warning::
 
-  Beware!  If security is disabled, you'll have to make sure the external one locks down the administration interface, otherwise it will be completely unlocked!
+  Beware!  If internal security is disabled, make sure the external security system locks down the :ref:`web_admin`, otherwise it will be completely unlocked, allowing unrestricted administrative access!
 
-To disable GeoServer security, first shut down GeoServer, open the ``web.xml`` file (located inside the ``WEB-INF`` directory) and comment out the "Spring Security Filter Chain Proxy" filter definition parameters.  These two pieces of code should look something like this:
+To disable GeoServer security, first shut down GeoServer, open the ``web.xml`` file (located inside the ``WEB-INF`` directory) and comment out the two **Spring Security Filter Chain Proxy** filter definition parameters.  These two pieces of code should look something like this:
 
 .. code-block:: xml 
 
@@ -29,4 +29,4 @@ To disable GeoServer security, first shut down GeoServer, open the ``web.xml`` f
       <url-pattern>/*</url-pattern>
    </filter-mapping>
    
-Comment these sections out.  When GeoServer is restarted, the internal security subsystem will be completely disabled.
+When these sections are commented out, restart GeoServer, and the internal security subsystem will be completely disabled.
