@@ -26,8 +26,6 @@ Plain text
 
 Plain text passwords provide no encryption at all.  In this case, passwords are human-readable by anyone who has access to the file system.  For obvious reasons, this is not recommended for any but the most basic test server.
 
-.. warning:: MIGHT NOT BE 2.2.0
-
 Digest
 ~~~~~~
 
@@ -40,18 +38,16 @@ Password-based encryption
 
 `Password-based encryption <http://www.javamex.com/tutorials/cryptography/password_based_encryption.shtml>`_ (PBE) is an encryption scheme that employs a user-supplied passphrase to generate an encryption key.  In order to protect from dictionary attacks, a random value called a `salt <http://en.wikipedia.org/wiki/Salt_%28cryptography%29>`_ is added to the passphrase when generating the key.
 
-GeoServer comes with support for two forms of PBE.  **Weak PBE** (the GeoServer default) uses a basic encryption method that is relatively easy to crack. **Strong PBE** uses a much stronger encryption method based on an AES 256-bit algorithm.
+GeoServer comes with support for two forms of PBE.  **Weak PBE** (the GeoServer default) uses a basic encryption method that is relatively easy to crack. **Strong PBE** uses a much stronger encryption method based on an AES 256-bit algorithm.  It is highly recommended to use Strong PBE.
+
+.. warning:: JUSTIN-TODO:  BE MORE SPECIFIC ABOUT ALGORITHM!
 
 .. note::
 
    Strong PBE is not natively available on all Java virtual machines and may require the installation of some additional `JCE Unlimited Strength Jurisdiction <http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html>`_ policy files:
 
-   * `Oracle JCE policy jars <http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html>`_
-   * `IBM JCE policy jars <https://www14.software.ibm.com/webapp/iwm/web/preLogin.do?source=jcesdk>`_
-
-   In cases where strong PBE is not available is **strongly** recommended that the additional policy files be installed. 
-
-.. warning:: WHY!?
+   * `Oracle JCE policy jars <http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html>`_ for Oracle JVM
+   * `IBM JCE policy jars <https://www14.software.ibm.com/webapp/iwm/web/preLogin.do?source=jcesdk>`_ for IBM JVM
 
 .. _sec_passwd_reversible:
 
@@ -59,8 +55,6 @@ Reversible encryption
 ~~~~~~~~~~~~~~~~~~~~~
 
 Password encryption methods can be **reversible**, meaning that it is possible (and desired) to obtain the plain-text password from its encrypted version.  Reversible passwords are necessary for database connections or external OGC services such as :ref:`cascading WMS <data_external_wms>` and :ref:`cascading WFS <data_external_wfs>`, since GeoServer must be able to decode the encrypted password and pass it to the external service. Plain text and PBE passwords are reversible.  
-
-.. warning::  VERIFY WHICH ONES ARE REVERSIBLE OR NOT
 
 Non-reversible passwords provide the highest level of security, and therefore should be used for user accounts and wherever else it is possible.  Digest is the only encryption scheme that is non-reversible.
 
@@ -91,9 +85,9 @@ GeoServer contains the ability to set a **master password** that serves two purp
 By default, the master password is set to ``geoserver``, though for obvious reasons it is strongly recommended that the master password be 
 changed **immediately** following any GeoServer installation.
 
-.. warning:: HOW TO SET THE MASTER PASSWORD.  CAN YOU DISABLE?
+.. warning:: JUSTIN-TODO: EXPLAIN MASTER PASSWORD PROVIDER
 
-.. warning:: SHOULD ADD TO GS IN PROD!?
+.. warning:: SHOULD ADD THIS INFO TO GS IN PROD!
 
 .. _sec_passwd_policy:
 
@@ -101,11 +95,9 @@ Password policies
 -----------------
 
 A password policy defines constraints on passwords such as password length, case, and required mix of character classes. Password
-policies are specified when creating user/group services and used to constrain passwords when creating new users and when changing passwords of existing users.
+policies are specified when adding :ref:`sec_rolesystem_usergroupservices` and used to constrain passwords when creating new users and when changing passwords of existing users.
 
 .. warning:: IS THAT LAST CLAUSE TRUE?
-
-.. warning:: LINK TO USER GROUP SERVICE
 
 Each user/group service uses a password policy to enforce these rules. The default GeoServer password policy allows the following optional constraints:
 

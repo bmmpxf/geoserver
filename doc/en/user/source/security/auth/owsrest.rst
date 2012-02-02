@@ -5,10 +5,7 @@ Authentication to OWS and REST services
 
 OWS and REST services are stateless and have no inherent awareness of "session", so the authentication scheme for these services requires the client to supply credentials on every request.  That said, "session integration" is supported, meaning that if a session already exists on the server (from a concurrent :ref:`authenticated web admin session <sec_auth_webadmin>` it will be used for authentication.  This scheme allows GeoServer to avoid the overhead of session creation for OWS and REST services.
 
-The default GeoServer configuration ships with support for only `HTTP Basic authentication <http://en.wikipedia.org/wiki/Basic_access_authentication>`_  for services, although alternative methods are 
-available through further configuration and additional security extensions.  
-
-.. warning:: SUCH AS? WHAT SECURITY EXTENSIONS!?
+The default GeoServer configuration ships with support for `HTTP Basic authentication <http://en.wikipedia.org/wiki/Basic_access_authentication>`_  for services.
 
 The typical process of authentication is as follows:
 
@@ -16,13 +13,11 @@ The typical process of authentication is as follows:
 2. If the user is accessing an unsecured resource, the request is handled normally
 3. If the user is accessing a secured resource:
 
-  1. An HTTP 401 status code is sent back to the client, which typically forces the client to prompt for credentials.
-  2. The service request is then repeated with the appropriate credentials included, usually in the HTTP header as with Basic Authentication. 
-  3. If the user has sufficient privileges to access the resource the request is handled normally, otherwise, a HTTP 404 status code is returned to the client.
+  * An HTTP 401 status code is sent back to the client, which typically forces the client to prompt for credentials.
+  * The service request is then repeated with the appropriate credentials included, usually in the HTTP header as with Basic Authentication. 
+  * If the user has sufficient privileges to access the resource the request is handled normally, otherwise, a HTTP 404 status code is returned to the client.
 
-4. Subsequent requests include the original user credentials
-
-.. warning:: MEANING THEY SHOULD INCLUDE, OR ARE INCLUDED BY DEFAULT?
+4. Subsequent requests should include the original user credentials
 
 
 Examples

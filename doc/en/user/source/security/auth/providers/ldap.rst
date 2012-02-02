@@ -41,7 +41,7 @@ In the case of using a :ref:`user/group service <sec_rolesystem_usergroupservice
 Installation
 ------------
 
-.. warning:: TODO
+.. warning:: JUSTIN-TODO:  WILL THIS BE INSTALLED BY DEFAULT?
 
 Configuration
 -------------

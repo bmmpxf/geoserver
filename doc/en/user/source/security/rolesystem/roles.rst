@@ -16,4 +16,4 @@ originates from. For example, a role service that assigns roles based on employe
 
 The default role in GeoServer is ``ROLE_ADMINISTRATOR``, which gives access to all operations and resources.
 
-.. warning:: OTHER DEFAULT ROLES!? IS_DEFAULT?
+.. warning:: JUSTIN-TODO: LIST OTHER PSEUDOROLES?

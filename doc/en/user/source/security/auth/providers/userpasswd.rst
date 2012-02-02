@@ -7,13 +7,6 @@ Username and password authentication is the default authentication provider.  It
 
 The provider simply takes the username and password from an incoming request (such as a Basic Authentication request), and then loads the user information from the user/group service and verifies the credentials.
 
-Installation
-------------
-
-No installation is necessary as this is the default authentication provider.
-
-.. warning:: IS THIS TRUE!?
-
 Configuration
 -------------
 

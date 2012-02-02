@@ -9,11 +9,6 @@ The provider takes the username and password from the incoming request and attem
 
 .. note:: To use the user/group service for password verification, please see the section on :ref:`sec_auth_provider_userpasswd`.
 
-Installation
-------------
-
-.. warning:: TODO
-
 Configuration
 -------------
 

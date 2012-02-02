@@ -28,11 +28,9 @@ XML role service
 
 The XML role service persists the role database in an XML file.  This is the default role service in GeoServer.
 
-This service represents the user database as XML corresponding to this :download:`XML schema`. The file is 
+This service represents the user database as XML corresponding to this :download:`XML schema <schemas/roles.xsd>`. The file is 
 named :file:`roles.xml` and is located inside the GeoServer data directory at a path of ``security/role/<name>/roles.xml``, where
 ``<name>`` is the name of the role service.
-
-.. warning:: NOTHING TO DOWNLOAD ABOVE!
 
 The following is the contents of ``roles.xml`` that ships with the default GeoServer configuration:
 
@@ -169,31 +167,45 @@ The ``roles`` table is the primary table and contains the list of roles.  Roles 
 
 The default GeoServer security configuration would be represented with the following database contents::
 
-    > select * from roles;
-    +--------------------+--------+
-    | name               | parent |
-    +--------------------+--------+
-    | ROLE_ADMINISTRATOR | NULL   |
-    +--------------------+--------+
+.. list-table:: Table: roles
+   :widths: 15 15 
+   :header-rows: 1
 
-    > select * from role_props;
-    Empty
+   * - name
+     - parent
+   * - ``ROLE_ADMINISTRATOR``
+     - ``NULL``
 
-    > select * from user_roles;
-    +----------+--------------------+
-    | username | rolename           |
-    +----------+--------------------+
-    | admin    | ROLE_ADMINISTRATOR |
-    +----------+--------------------+
 
-    > select * from group_roles;
-    Empty
+.. list-table:: Table: role_props
+   :widths: 15 15 15
+   :header-rows: 1
 
-Installation
-~~~~~~~~~~~~
+   * - rolename
+     - propname
+     - propvalue
+   * - *Empty*
+     - *Empty*
+     - *Empty*
 
-.. warning:: INSTALLATION?
-    
+.. list-table:: Table: user_roles
+   :widths: 15 15 
+   :header-rows: 1
+
+   * - username
+     - rolename
+   * - ``admin``
+     - ``ROLE_ADMINISTRATOR``
+
+.. list-table:: Table: group_roles
+   :widths: 15 15 
+   :header-rows: 1
+
+   * - groupname
+     - rolename
+   * - *Empty*
+     - *Empty*
+
 Configuration
 ~~~~~~~~~~~~~
 

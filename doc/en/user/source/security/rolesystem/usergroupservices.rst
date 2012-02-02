@@ -13,13 +13,9 @@ Many types of authentication providers will make use of a user/group service to 
 
 A user/group service can be read-only, in that it only provides a source of user information and does not allow for the adding/changing of new users and groups. Such a case would occur if a user/group service was set up to delegate to some external service for the database of users and groups. An example of this would be an external LDAP server.
 
-GeoServer comes by default with support for a single type of user/group service that persists this information in XML. Additional user/group service implementations are available as extensions.
+GeoServer comes by default with support for two types of user/group services:
 
-.. warning:: HOW TO GET EXTENSION?  ARE THERE MORE THAN XML/JDBC?
-
-The following user group services are available in GeoServer:
-
-* :ref:`XML <sec_rolesystem_usergroupxml>` - Default user/group service persisted as XML
+* :ref:`XML <sec_rolesystem_usergroupxml>` - *(Default)* User/group service persisted as XML
 * :ref:`JDBC <sec_rolesystem_usergroupjdbc>` - User/group service persisted in database via JDBC
 
 .. _sec_rolesystem_usergroupxml:
@@ -29,7 +25,7 @@ XML user/group service
 
 The XML user/group service persists the user/group database in an XML file.  This is the default behavior in GeoServer.
 
-This service represents the user database as XML corresponding to this :download:`XML schema`. The file is 
+This service represents the user database as XML corresponding to this :download:`XML schema <schemas/users.xsd>`. The file is 
 named :file:`users.xml` and is located inside the GeoServer data directory at a path of ``security/usergroup/<name>/users.xml``, where
 ``<name>`` is the name of the user/group service.
 
@@ -143,7 +139,7 @@ The JDBC user/group service persists the user/group database via JDBC.  It repre
      - Type
      - Null
      - Key
-   * - Name
+   * - name
      - varchar(128)
      - NO
      - PRI
@@ -172,28 +168,48 @@ The JDBC user/group service persists the user/group database via JDBC.  It repre
 The ``users`` table is the primary table and contains the list of users with associated passwords. The ``user_props`` table is 
 a mapping table that maps additional properties to a user. (See :ref:`sec_rolesystem_usergroups` for more details.)  The ``groups`` table lists all available groups, and the ``group_members`` table contains the mapping of users to the groups they are associated with.
 
-The default GeoServer security configuration would be represented with the following database contents::
+The default GeoServer security configuration would be represented with the following database contents:
 
-    > select * from users;
-    +-------+-----------------+---------+
-    | name  | password        | enabled |
-    +-------+-----------------+---------+
-    | admin | digest1:UTb.... | Y       |
-    +-------+-----------------+---------+
-    
-    > select * from user_props;
-    Empty
-    
-    > select * from groups;
-    Empty
-    
-    > select * from group_members;
-    Empty
+.. list-table:: Table: users
+   :widths: 15 15 15 
+   :header-rows: 1
 
-Installation
-~~~~~~~~~~~~
+   * - name
+     - password
+     - enabled
+   * - ``admin``
+     - ``digest1:UTb...``
+     - ``Y``
 
-.. warning:: INSTALLATION
+
+.. list-table:: Table: user_props
+   :widths: 15 15 15 
+   :header-rows: 1
+
+   * - username
+     - propname
+     - propvalue
+   * - *Empty*
+     - *Empty*
+     - *Empty*
+
+.. list-table:: Table: groups
+   :widths: 15 15
+   :header-rows: 1
+
+   * - name
+     - enabled
+   * - *Empty*
+     - *Empty*
+
+.. list-table:: Table: group_members
+   :widths: 15 15
+   :header-rows: 1
+
+   * - groupname
+     - username
+   * - *Empty*
+     - *Empty*
 
 
 Configuration
