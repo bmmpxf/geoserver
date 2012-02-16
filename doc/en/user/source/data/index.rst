@@ -58,5 +58,6 @@ Other data sources require the use of GeoServer extensions, extra downloads that
    sqlview
    primarykey/
    app-schema/index
+   jndi
 
    

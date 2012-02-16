@@ -23,7 +23,7 @@ where:
 
 .. note:: 
 
-   If a namespace or layer name is supposed to contain dots they can be escaped using double backslashes (``\\``). For example, if a rule must refere ``layer.with.dots`` the following syntax can be used::
+   If a namespace or layer name is supposed to contain dots they can be escaped using double backslashes (``\\``). For example, if a layer is named ``layer.with.dots`` the following syntax for a rule can be used::
 
      topp.layer\\.with\\.dots.r=role[,role2,...]
 
@@ -134,7 +134,7 @@ In this example, here is the map of roles to permissions:
 A more complex situation
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following entries demonstrate configuring GeoServer with global-, namepace-, and layer-level permissions::
+The following entries demonstrate configuring GeoServer with global-, namespace--, and layer-level permissions::
 
    *.*.r=TRUSTED_ROLE
    *.*.w=NO_ONE

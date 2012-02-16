@@ -42,12 +42,17 @@ GeoServer comes with support for two forms of PBE.  **Weak PBE** (the GeoServer 
 
 .. warning:: JUSTIN-TODO:  BE MORE SPECIFIC ABOUT ALGORITHM!
 
+.. _sec_passwd_encryption_policies:
+
 .. note::
 
    Strong PBE is not natively available on all Java virtual machines and may require the installation of some additional `JCE Unlimited Strength Jurisdiction <http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html>`_ policy files:
 
    * `Oracle JCE policy jars <http://www.oracle.com/technetwork/java/javase/downloads/jce-6-download-429243.html>`_ for Oracle JVM
    * `IBM JCE policy jars <https://www14.software.ibm.com/webapp/iwm/web/preLogin.do?source=jcesdk>`_ for IBM JVM
+
+   .. warning:: THIS DIDN'T WORK FOR ME.
+
 
 .. _sec_passwd_reversible:
 
@@ -97,8 +102,6 @@ Password policies
 A password policy defines constraints on passwords such as password length, case, and required mix of character classes. Password
 policies are specified when adding :ref:`sec_rolesystem_usergroupservices` and used to constrain passwords when creating new users and when changing passwords of existing users.
 
-.. warning:: IS THAT LAST CLAUSE TRUE?
-
 Each user/group service uses a password policy to enforce these rules. The default GeoServer password policy allows the following optional constraints:
 
 * Passwords must contain at least one number
@@ -106,8 +109,4 @@ Each user/group service uses a password policy to enforce these rules. The defau
 * Passwords must contain at least one lower case letter
 * Password minimum length
 * Password maximum length
-
-.. warning:: HOW/WHERE TO SET THIS?
-
-.. warning:: IS THERE ANOTHER NONDEFAULT PASSWORD POLICY?
 

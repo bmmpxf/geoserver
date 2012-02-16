@@ -3,10 +3,7 @@
 Authenticating to the Web Admin Interface
 =========================================
 
-The method of authenticating to the :ref:`web_admin` application is typical of most web applications that provide login capabilities.
-
-The web admin application is based primarily on form-based authentication, in which a user authenticates through a form in 
-a web browser. Upon successful authentication a session is created on the server, eliminating the need for a user to repeat the login process for each page they wish to access.  An optional "Remember Me" setting is also supported which will store authentication information in a client-side cookie to allow the user to bypass the form-based authentication after the initial session has timed out.
+The method of authenticating to the :ref:`web_admin` application is typical of most web applications that provide login capabilities.  The application is based primarily on form-based authentication, in which a user authenticates through a form in a web browser. Upon successful authentication a session is created on the server, eliminating the need for a user to repeat the login process for each page they wish to access.  An optional "Remember Me" setting is also supported which will store authentication information in a client-side cookie to allow the user to bypass the form-based authentication after the initial session has timed out.
 
 The typical process of authentication is as follows:
 
@@ -37,7 +34,7 @@ In the above figure the filter chain is made up of the following filters:
 
 The provider chain is made up of two providers:
 
-* **Root** - The :ref:`sec_root` is a special super-user provider.  As this account is rarely used, this provider is rarely invoked.
+* **Root** - The :ref:`sec_root` has a special "super user" provider.  As this account is rarely used, this provider is rarely invoked.
 * **Username/password** - Performs username/password authentication against a user database.
 
 To illustrate how the elements of the various chains work, here are a number of example requests. 
@@ -89,14 +86,10 @@ User returns after session time out
 
 This example shows the process for when a user returns to the web admin after the previously created session has timed out.
 
-.. warning:: DOES THIS NEED A PIC?
-
 A session will time out after a certain period of time.  When the user returns to the web admin, this becomes essentially the same chain of events as the user visiting the web app for the first time, as noted above.  The chain proceeds to the *Anonymous* filter that authenticates anonymously.  Since the page requested is likely to be a page that requires authentication, the response is that the user is redirected to the home page and is not logged in.
 
 User logs in with "Remember Me" flag set
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. warning:: DOES THIS NEED A PIC?
 
 This example shows the process for logging in with the "Remember Me" flag set.
 

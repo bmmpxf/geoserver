@@ -6,8 +6,6 @@ Service Security
 GeoServer allows for access control at the service level, allowing for the locking down of service operations to only 
 authenticated users who have been granted a particular role. There are two main categories of services present in GeoServer. The first is :ref:`OWS services <services>` such as WMS and WFS. The second are RESTful services, such as :ref:`RESTconfig <rest_extension>`.
 
-.. warning:: THIS ISN'T AN EXTENSION ANYMORE
-
 .. note:: Service-level security and :ref:`sec_layer` cannot be combined.  For example, it is not possible to specify access to a specific OWS service only for one specific layer.
 
 OWS services
@@ -92,11 +90,9 @@ A few things to note:
 Ant patterns
 ~~~~~~~~~~~~
 
-Ant patterns are a commonly used syntax for pattern matching directory and file paths. The :ref:`examples <examples>` section contains some basic examples. The apache ant `user manual <http://ant.apache.org/manual/dirtasks.html>`_ contains more sophisticated cases.
+Ant patterns are a commonly used syntax for pattern matching directory and file paths. The examples below contain some basic examples. The apache ant `user manual <http://ant.apache.org/manual/dirtasks.html>`_ contains more sophisticated cases.
 
-.. warning:: EXAMPLES REF!?
-
-The following examples are specific to the :ref:`RESTconfig extension <rest_extension>`, but any RESTful GeoServer service can be configured in the same manner.
+The following examples are specific to :ref:`RESTconfig <rest_extension>`, but any RESTful GeoServer service can be configured in the same manner.
 
 Disabling anonymous access to services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -38,7 +38,7 @@ In the above figure the filter chain consists of three filters:
 
 The provider chain is made up of two providers:
 
-* **Root** - The :ref:`sec_root` is a special super-user provider.  As this account is rarely used, this provider is rarely invoked.
+* **Root** - The :ref:`sec_root` has a special "super user" provider.  As this account is rarely used, this provider is rarely invoked.
 * **Username/password** - Performs username/password authentication against a user database.
 
 To illustrate how the elements of the various chains work, here are some example OWS requests. 
@@ -59,8 +59,6 @@ Anonymous WMS GetMap request for a secured layer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example shows the process for when a WMS client makes an anonymous GetMap request for a secured layer
-
-.. warning:: PIC?
 
 The chain executes exactly as above.  The *Session* filter looks for an existing session, but finds none, so processing continues. The *Basic Auth* filter looks for the Basic Authorization header in the request, but as the request is anonymous, the filter finds none. Finally, the *Anonymous* filter executes and authenticates the request anonymously.  However, in this case the layer being accessed is a secured resource, so the handling of the GetMap request fails.  The server returns an exception accompanied with a HTTP 401 status code, which usually triggers the client presenting the user with a login dialog. 
 

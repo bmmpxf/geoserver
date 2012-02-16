@@ -18,7 +18,7 @@ The following diagram illustrates a user/group service and a role service intera
 The user/group service provides the lookup interface for user information. Part of loading information for a user involves
 delegating to the role service to determine what roles/authorities the specific user has associated with them. 
 
-Anthentication of user credentials
+Authentication of user credentials
 ----------------------------------
 
 A user/group service is primarily used during authentication. An authentication provider in the :ref:`sec_auth_chain` may utilize a user/group service
@@ -32,7 +32,7 @@ to perform authentication of user credentials.
 GeoServer defaults
 ------------------
 
-The following figure illustrates the default user/group service, role service, and authentication provider in GeoServer
+The following figure illustrates the default user/group service, role service, and authentication provider in GeoServer:
 
 .. figure:: images/usergrouprole3.png
    :align: center
