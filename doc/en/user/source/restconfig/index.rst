@@ -1,16 +1,14 @@
-.. _rest_extension:
+.. _rest:
 
 RESTful Configuration
 =====================
 
-GeoServer provides a RESTful interface through which clients can 
-configure an instance through simple HTTP calls. With it clients can 
-programatically configure the data served by GeoServer.
+GeoServer provides a `RESTful <http://en.wikipedia.org/wiki/Representational_state_transfer>`_ interface through which clients can configure an instance through simple HTTP calls. Using the REST interface, clients can programatically configure GeoServer without the need to use the :ref:`web_admin`.
 
-To learn more proceed to the :ref:`rest_overview` section. For details about the API and some hands on examples proceed to the :ref:`rest_config_api_ref` or :ref:`rest_config_examples` sections.
+To learn more about the GeoServer REST interface, proceed to the :ref:`rest_overview` section. For details about its API and some hand-on examples, proceed to the :ref:`rest_config_api_ref` and :ref:`rest_config_examples` sections.
  
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    overview/
    rest-config-api/
