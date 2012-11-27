@@ -1,7 +1,9 @@
-.. _rest_config_api_ref:
+.. _rest_api:
 
 REST Configuration API Reference
 ================================
+
+This section contains a full reference to the GeoServer REST configuration API.
 
 Formats and representations
 ---------------------------
@@ -50,7 +52,7 @@ Authentication
 POST, PUT, and DELETE requests (requests that modify resources) require the 
 client to be authenticated. Currently the only supported method of 
 authentication is Basic authentication. See the 
-:ref:`examples <rest_config_examples>` section for examples of how to perform 
+:ref:`examples <rest_examples>` section for examples of how to perform 
 authentication with various clients and environments.
 
 Status codes
