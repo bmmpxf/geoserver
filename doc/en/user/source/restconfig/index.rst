@@ -13,7 +13,7 @@ resource is represented as a standard URI, such as ``http://GEOSERVER_HOME/rest/
 For details about the REST API, proceed to the :ref:`rest_api` section.  For some hands on examples, process to the :ref:`rest_examples` section.
  
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    api
    examples/index
