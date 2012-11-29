@@ -1,4 +1,4 @@
-.. _rest_config_examples_java:
+.. _rest_examples_java:
 
 Java
 ====

@@ -1,4 +1,4 @@
-.. _rest_config_examples_php:
+.. _rest_examples_php:
 
 PHP
 ====
