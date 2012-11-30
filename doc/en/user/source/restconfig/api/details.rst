@@ -1,9 +1,9 @@
 .. _rest_api_details:
 
-REST Configuration API details
-==============================
+API details
+===========
 
-This page contains details about how the REST API architecture operates.
+This page contains information on how the REST API architecture operates.
 
 .. todo:: This section needs a better intro.
 

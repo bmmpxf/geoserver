@@ -5,9 +5,9 @@ REST Configuration API reference
 
 This section contains a full reference to the GeoServer REST configuration API.
 
-.. todo:: This page contains a number of representations saved as plain text. How to verify that these are still up-to-date? Or how best to update them? Or perhaps we want to remove them instead?
+.. todo:: This page contains a number of representations saved as plain text. They have not been updated. How to verify that these are still up-to-date? Or how best to update them? Or perhaps we want to remove them instead? 
 
-.. todo:: Need to verify if this list is exahustive. Some entries, like "/fonts", are hidden, so there may be others. 
+.. todo:: Need to verify if this list is exahustive. Some entries, like "/fonts", are hidden (why?), so there may be others. 
 
 .. toctree::
    :maxdepth: 1

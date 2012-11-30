@@ -145,7 +145,7 @@ The ``file``, ``url``, and ``external`` endpoints are used to specify the method
      - Default Format
      - Parameters
    * - GET
-     - *Deprecated*. Retrieve the underlying files for the data store as a zip file with mime type ``application/zip``. 
+     - *Deprecated*. Retrieve the underlying files for the data store as a zip file with MIME type ``application/zip``. 
      - 200
      - 
      - 

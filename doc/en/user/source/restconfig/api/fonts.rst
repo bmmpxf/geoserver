@@ -8,6 +8,8 @@ This operation provides the list of ``fonts`` available in GeoServer. It can be 
 ``/fonts[.<format>]``
 ---------------------
 
+.. todo:: <format> is required, otherwise won't list.  HTML returns XML.
+
 .. list-table::
    :header-rows: 1
 

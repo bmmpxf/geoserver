@@ -131,8 +131,7 @@ This operation uploads a file containing spatial data into an existing coverage 
      - Default Format
      - Parameters
    * - GET
-     - Get the underlying files for the coverage store as a zip file with 
-       mime type ``application/zip``.
+     - *Deprecated*. Get the underlying files for the coverage store as a zip file with MIME type ``application/zip``.
      - 200
      - 
      - 
