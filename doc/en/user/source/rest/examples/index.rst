@@ -1,6 +1,6 @@
 .. _rest_examples:
 
-REST Configuration Examples
+REST configuration examples
 ===========================
 
 This section contains a number of examples which illustrate various uses of the

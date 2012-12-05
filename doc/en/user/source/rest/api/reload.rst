@@ -22,12 +22,12 @@ Reloads the GeoServer catalog and configuration from disk. This operation is use
      - 
      - 
    * - POST
-     - Reloads the configuration from disk
+     - Reload the configuration from disk
      - 200
      - 
      - 
    * - PUT
-     - Reloads the configuration from disk
+     - Reload the configuration from disk
      - 200
      - 
      - 

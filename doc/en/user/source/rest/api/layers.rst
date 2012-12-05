@@ -112,7 +112,7 @@ Parameters
 
 .. _rest_api_layers_recurse:
 
-The ``recurse`` parameter is used to recursively delete all resources referenced by the specified layer. Allowable values for this parameter are "true" or "false". The default value is "false".
+The ``recurse`` parameter recursively deletes all layers referenced by the specified layer. Allowed values for this parameter are "true" or "false". The default value is "false".
 
 ``/layers/<l>/styles[.<format>]``
 ---------------------------------

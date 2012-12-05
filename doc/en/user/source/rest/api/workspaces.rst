@@ -62,7 +62,7 @@ Controls a specific workspace.
      - Default Format
      - Parameters
    * - GET
-     - Returns workspace ``ws``
+     - Return workspace ``ws``
      - 200
      - HTML, XML, JSON
      - HTML
@@ -113,7 +113,7 @@ Parameters
 
 .. _rest_api_workspaces_recurse:
 
-The ``recurse`` parameter is used to recursively delete all resources contained by the specified workspace. This includes data stores, coverage stores, feature types, and more. Allowable values for this parameter are "true" or "false". The default value is "false".
+The ``recurse`` parameter recursively deletes all layers referenced by the specified workspace, including data stores, coverage stores, feature types, and so on. Allowed values for this parameter are "true" or "false". The default value is "false".
 
 ``/workspaces/default[.<format>]``
 ----------------------------------

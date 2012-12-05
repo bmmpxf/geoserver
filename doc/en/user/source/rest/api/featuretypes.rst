@@ -27,7 +27,7 @@ Controls all feature types in a given data store / workspace.
      - HTML
      - :ref:`list <rest_api_featuretypes_list>`
    * - POST
-     - Create a new feature type, see :ref:`note <rest_api_featuretypes_post>` below
+     - Create a new feature type, :ref:`see note below <rest_api_featuretypes_post>`
      - 201 with ``Location`` header
      - XML, JSON
      - 
@@ -78,8 +78,8 @@ Parameters
 
 The ``list`` parameter is used to control the category of feature types that are returned. It can take one of the following values:
 
-* ``configured``—Only setup or configured feature types are returned. This is the default value.
-* ``available``—Only unconfigured feature types (not yet setup) but are available from the specified data store will be returned. 
+* ``configured``—Only configured feature types are returned. This is the default value.
+* ``available``—Only feature types that haven't been configured but are available from the specified data store will be returned. 
 * ``available_with_geom``—Same as ``available`` but only includes feature types that have a geometry attribute.
 * ``all``—The union of ``configured`` and ``available``.
 
@@ -149,12 +149,12 @@ Parameters
 
 .. _rest_api_featuretypes_recurse:
 
-The ``recurse`` parameter is used to recursively delete all layers that reference by the specified feature type. Allowable values for this parameter are "true" or "false". The default value is "false".
+The ``recurse`` parameter recursively deletes all layers referenced by the specified feature type. Allowed values for this parameter are "true" or "false". The default value is "false".
 
 .. _rest_api_featuretypes_recalculate:
 
-The ``recalculate`` parameter specifies whether to recalculate any bounding boxes for a feature type. Some properties of feature types are automatically recalculated when necessary. In particular, the native bounding box is recalculated when the projection or projection policy are changed, and the lat/lon bounding box is recalculated when the native bounding box is recalculated, or when a new native bounding box is explicitly provided in the request. (The native and lat/lon bounding boxes are not automatically recalculated when they are explicitly included in the request.) In addition, the client may explicitly request a fixed set of fields to calculate, by including a comma-separated list of their names in the ``recalculate`` parameter. For example:
+The ``recalculate`` parameter specifies whether to recalculate any bounding boxes for a feature type. Some properties of feature types are automatically recalculated when necessary. In particular, the native bounding box is recalculated when the projection or projection policy are changed, and the lat/long bounding box is recalculated when the native bounding box is recalculated, or when a new native bounding box is explicitly provided in the request. (The native and lat/long bounding boxes are not automatically recalculated when they are explicitly included in the request.) In addition, the client may explicitly request a fixed set of fields to calculate, by including a comma-separated list of their names in the ``recalculate`` parameter. For example:
 
 * ``recalculate=`` (empty parameter): Do not calculate any fields, regardless of the projection, projection policy, etc. This might be useful to avoid slow recalculation when operating against large datasets.
-* ``recalculate=nativebbox``: Recalculate the native bounding box, but do not recalculate the lat/lon bounding box.
-* ``recalculate=nativebbox,latlonbbox``: Recalculate both the native bounding box and the lat/lon bounding box.
+* ``recalculate=nativebbox``: Recalculate the native bounding box, but do not recalculate the lat/long bounding box.
+* ``recalculate=nativebbox,latlonbbox``: Recalculate both the native bounding box and the lat/long bounding box.

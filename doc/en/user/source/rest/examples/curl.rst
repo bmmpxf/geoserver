@@ -3,7 +3,7 @@
 cURL
 ====
 
-The examples in this section use the `cURL <http://curl.haxx.se/>`_ utility to genreate requests to GeoServer's REST interface. cURL is a command line tool for executing HTTP requests and transferring files. While the examples below are designed for cURL, they can be applied to any HTTP-capable tool or library.
+The examples in this section use `cURL <http://curl.haxx.se/>`_, a command line tool for executing HTTP requests and transferring files, to generate requests to GeoServer’s REST interface. Although the examples are based on cURL, they could be adapted for any HTTP-capable tool or library.
 
 .. todo::
 
@@ -19,7 +19,7 @@ Adding a new workspace
 
 The following creates a new workspace named "acme" with a POST request:
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. code-block:: console
 
@@ -69,7 +69,7 @@ This shows that the workspace can contain "``dataStores``" (for :ref:`vector dat
 
 .. note:: 
 
-   In the above request, the ``Accept`` header is not technically necessary, though it is more properly RESTful to include it. The following request omits the ``Accept`` header, but will return the same response as above.
+   Although the ``Accept`` header is not strictly necessary in the example above, including it conforms to the REST specification. The following request omits the ``Accept`` header, but will return the same response as above.
 
    .. code-block:: console
 
@@ -83,7 +83,7 @@ In this example a new store will be created by uploading a shapefile.
 
 The following request uploads a zipped shapefile named ``roads.zip`` and creates a new store named ``roads``.
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. todo:: What is the syntax for running this command when roads.zip isn't in the same path?
 
@@ -130,9 +130,9 @@ The response should look like this:
         type="application/xml"/>
      </featureTypes>
 
-By default when a shapefile is uploaded, a featuretype is automatically created. (See :ref:`webadmin_layers` page for details on how to control this behavior.) The featuretype information can be retrieved as XML with a GET request:
+By default when a shapefile is uploaded, a feature type is automatically created. (See :ref:`webadmin_layers` page for details on how to control this behavior.) The feature type information can be retrieved as XML with a GET request:
 
-.. todo:: The link above doesn't appear to talk about how to control whether a featuretype is automatically created.  I think the text may be trying to say that one can disable a featuretype there, but it's unclear.
+.. todo:: The link above doesn't appear to talk about how to control whether a feature type is automatically created.  I think the text may be trying to say that one can disable a feature type there, but it's unclear.
 
 .. code-block:: console
 
@@ -164,7 +164,7 @@ In the previous example a shapefile was uploaded directly to GeoServer by sendin
 
 Consider a directory on the server ``/data/shapefiles/rivers`` that contains the shapefile ``rivers.shp``. The following adds a new store for the shapefile:
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. code-block:: console
 
@@ -180,7 +180,7 @@ If executed correctly, the response should contain the following::
 
 The shapefile will be added to the existing store and published as a layer.
 
-To verify the contents of the store, execute a GET request. Since the XML response only gives details about the store itself without showing its contents, execute a GET request for HTML:
+To verify the contents of the store, execute a GET request. Since the XML response only provides details about the store itself without showing its contents, execute a GET request for HTML:
 
 .. code-block:: console
 
@@ -195,7 +195,7 @@ This example shows how to load and create a store that contains a number of shap
 
 Consider a directory on the server ``/data/shapefiles`` that contains multiple shapefiles. The following adds a new store for the directory.
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. code-block:: console
 
@@ -209,7 +209,7 @@ If executed correctly, the response should contain the following::
  
   < HTTP/1.1 201 Created
 
-To verify the contents of the store, execute a GET request. Since the XML response only gives details about the store itself without showing its contents, execute a GET request for HTML:
+To verify the contents of the store, execute a GET request. Since the XML response only provides details about the store itself without showing its contents, execute a GET request for HTML:
 
 .. code-block:: console
 
@@ -224,7 +224,7 @@ This example will create a new style on the server and populate it the contents 
 
 The following creates a new style named ``roads_style``:
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. code-block:: console
 
@@ -258,9 +258,9 @@ The SLD itself can be downloaded through a a GET request:
 Changing a layer style
 ----------------------
 
-This example will change a layer style. To do this, it is first helpful to view the existing configuration for a given layer.
+This example will alter a layer style. Prior to making any changes, it is helpful to view the existing configuration for a given layer. 
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 The following retrieves the "acme:roads" layer information as XML:
 
@@ -268,7 +268,7 @@ The following retrieves the "acme:roads" layer information as XML:
 
    curl -v -u admin:geoserver -XGET "http://localhost:8080/geoserver/rest/layers/acme:roads.xml"
 
-And the response:
+The response in this case would be: 
 
 .. code-block:: xml
 
@@ -338,7 +338,7 @@ Create a new text file and add the following content to it. This will represent 
 
 The following will add the new PostGIS store to the GeoServer catalog:
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. code-block:: console
 
@@ -391,7 +391,7 @@ In this example a table from the PostGIS database created in the previous exampl
 
 The following adds the table ``buildings`` as a new feature type:
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. todo:: This didn't work. (500)
 
@@ -416,9 +416,9 @@ This layer can viewed with a WMS GetMap request::
 Creating a PostGIS table
 ------------------------
 
-In the previous example, a new featuretype was added based on a PostGIS table that already existed in the database. The following example will not only create a new featuretype in GeoServer, but will also create the PostGIS table itself.
+In the previous example, a new feature type was added based on a PostGIS table that already existed in the database. The following example will not only create a new feature type in GeoServer, but will also create the PostGIS table itself.
 
-Create a new text file and add the following content to it. This will represent the definition of the new featuretype and table. Save the file as :file:`annotations.xml`.
+Create a new text file and add the following content to it. This will represent the definition of the new feature type and table. Save the file as :file:`annotations.xml`.
 
 .. code-block:: xml
 
@@ -443,9 +443,9 @@ Create a new text file and add the following content to it. This will represent 
      </attributes>
    </featureType>
     
-This request will perform the featuretype creation and add the new table:
+This request will perform the feature type creation and add the new table:
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. code-block:: console
 
@@ -467,7 +467,7 @@ Creating a layer group
 
 In this example a layer group will be created, based on layers that already exist on the server.
 
-Create a new text file and add the following content to it. This will represent the new layer group. Save the file as :file:`nycLayerGroup.xml`.
+Create a new text file and add the following content to it. This file will represent the definition of the new layer group. Save the file as :file:`nycLayerGroup.xml`.
 
 .. code-block:: xml
 
@@ -488,7 +488,7 @@ Create a new text file and add the following content to it. This will represent 
 
 The following request creates the new layer group:
 
-.. note:: Each code block below contains a single command that may be wrapped over multiple lines.
+.. note:: Each code block below contains a single command that may be extended over multiple lines.
 
 .. todo::  Why does this example use -d @filename.xml and the previous example use -T filename.xml?
 

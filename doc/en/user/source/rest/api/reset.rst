@@ -22,12 +22,12 @@ Resets all store, raster, and schema caches. This operation is used to force Geo
      - 
      - 
    * - POST
-     - Reloads the configuration from disk
+     - Reload the configuration from disk
      - 200
      - 
      - 
    * - PUT
-     - Reloads the configuration from disk
+     - Reload the configuration from disk
      - 200
      - 
      - 

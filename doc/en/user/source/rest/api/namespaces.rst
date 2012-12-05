@@ -61,7 +61,7 @@ Controls a particular namespace.
      - Formats
      - Default Format
    * - GET
-     - Returns namespace ``ns``
+     - Return namespace ``ns``
      - 200
      - HTML, XML, JSON
      - HTML
@@ -117,7 +117,7 @@ Controls the default namespace.
      - Formats
      - Default Format
    * - GET
-     - Returns default namespace
+     - Return default namespace
      - 200
      - HTML, XML, JSON
      - HTML

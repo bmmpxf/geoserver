@@ -5,6 +5,8 @@ Coverages
 
 A ``coverage`` is a raster data set which originates from a coverage store.
 
+.. todo:: JC: "The second level headings [don't] work so well for the longer paths - maybe another heading format?"
+
 ``/workspaces/<ws>/coveragestores/<cs>/coverages[.<format>]``
 -------------------------------------------------------------
 
@@ -114,4 +116,4 @@ Parameters
 
 .. _rest_api_coverages_recurse:
 
-The ``recurse`` parameter is used to recursively delete all layers that reference by the specified coverage. Allowable values for this parameter are "true" or "false". The default value is "false".
+The ``recurse`` parameter recursively deletes all layers referenced by the specified coverage. Permitted values for this parameter are "true" or "false". The default value is "false".

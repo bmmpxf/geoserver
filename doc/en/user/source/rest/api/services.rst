@@ -61,7 +61,7 @@ Controls Web Coverage Service settings for a given workspace.
      - Formats
      - Default Format
    * - GET
-     - Return WCS settings for workspace <ws>
+     - Return WCS settings for workspace ``ws``
      - 200
      - HTML, XML, JSON
      - HTML
@@ -71,12 +71,12 @@ Controls Web Coverage Service settings for a given workspace.
      -
      -
    * - PUT
-     - Create or modify WCS settings for workspace <ws>
+     - Create or modify WCS settings for workspace ``ws``
      - 200
      - XML,JSON
      - 
    * - DELETE
-     - Delete WCS settings for workspace <ws>
+     - Delete WCS settings for workspace ``ws``
      - 200
      -
      -
@@ -145,7 +145,7 @@ Controls Web Feature Service settings for a given workspace.
      - Formats
      - Default Format
    * - GET
-     - Return WFS settings for workspace <ws>
+     - Return WFS settings for workspace ``ws``
      - 200
      - HTML, XML, JSON
      - HTML
@@ -155,12 +155,12 @@ Controls Web Feature Service settings for a given workspace.
      -
      -
    * - PUT
-     - Modify WFS settings for workspace <ws>
+     - Modify WFS settings for workspace ``ws``
      - 200
      - XML,JSON
      - 
    * - DELETE
-     - Delete WFS settings for workspace <ws>
+     - Delete WFS settings for workspace ``ws``
      - 200
      -
      -
@@ -230,7 +230,7 @@ Controls Web Map Service settings for a given workspace.
      - Formats
      - Default Format
    * - GET
-     - Return WMS settings for workspace <ws>
+     - Return WMS settings for workspace ``ws``
      - 200
      - HTML, XML, JSON
      - HTML
@@ -240,12 +240,12 @@ Controls Web Map Service settings for a given workspace.
      -
      -
    * - PUT
-     - Modify WMS settings for workspace <ws>
+     - Modify WMS settings for workspace ``ws``
      - 200
      - XML,JSON
      - 
    * - DELETE
-     - Delete WMS settings for workspace <ws>
+     - Delete WMS settings for workspace ``ws``
      - 200
      -
      -

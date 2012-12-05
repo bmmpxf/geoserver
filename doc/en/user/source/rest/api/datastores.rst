@@ -3,7 +3,7 @@
 Data stores
 ===========
 
-A ``data store`` is a source of spatial data that is vector based. It can be a file (such as a shapefile), a database (such as PostGIS), or a server (such as a :ref:`remote Web Feature Service <data_external_wfs>`).
+A ``data store`` contains vector format spatial data. It can be a file (such as a shapefile), a database (such as PostGIS), or a server (such as a :ref:`remote Web Feature Service <data_external_wfs>`).
 
 ``/workspaces/<ws>/datastores[.<format>]``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,8 +114,7 @@ Parameters
 
 .. _rest_api_datastores_recurse:
 
-The ``recurse`` parameter is used to recursively delete all feature types contained by the specified data store. Allowable values for this parameter are "true" or "false". The default value is "false".
-
+The ``recurse`` parameter recursively deletes all layers referenced by the specified data store. Allowed values for this parameter are "true" or "false". The default value is "false".
 
 
 ``/workspaces/<ws>/datastores/<ds>/file[.<extension>]``
@@ -127,13 +126,16 @@ The ``recurse`` parameter is used to recursively delete all feature types contai
 ``/workspaces/<ws>/datastores/<ds>/external[.<extension>]``
 -----------------------------------------------------------
 
+The three end points above allow a file containing spatial data to be added (via a POST or PUT) into an existing data store, or will create a new data store if it doesn't already exist.
+
+
 These three operations upload a file containing spatial data into an existing data store, or will create a new data store if it doesn't already exist.
 
 The ``file``, ``url``, and ``external`` endpoints are used to specify the method that is used to upload the file.
 
-* The ``file`` method is used to directly upload a file from a local source. The body of the request is the file itself.
-* The ``url`` method is used to indirectly upload a file from an remote source. The body of the request is a URL pointing to the file to upload. This URL must be visible from the server. 
-* The ``external`` method is used to use an existing file on the server. The body of the request is the absolute path to the existing file.
+* ``file``—Uploads a file from a local source. The body of the request is the file itself.
+* ``url``—Uploads a file from an remote source. The body of the request is a URL pointing to the file to upload. This URL must be visible from the server. 
+* ``external``—Uses an existing file on the server. The body of the request is the absolute path to the existing file.
 
 .. list-table::
    :header-rows: 1
@@ -145,7 +147,7 @@ The ``file``, ``url``, and ``external`` endpoints are used to specify the method
      - Default Format
      - Parameters
    * - GET
-     - *Deprecated*. Retrieve the underlying files for the data store as a zip file with MIME type ``application/zip``. 
+     - *Deprecated*. Retrieve the underlying files for the data store as a zip file with MIME type ``application/zip`` 
      - 200
      - 
      - 
@@ -157,9 +159,9 @@ The ``file``, ``url``, and ``external`` endpoints are used to specify the method
      - 
      -
    * - PUT
-     - Uploads files to the data store ``ds``, creating it if necessary.
+     - Uploads files to the data store ``ds``, creating it if necessary
      - 200
-     - See :ref:`notes <rest_api_datastores_file_put>` below.
+     - :ref:`See note below <rest_api_datastores_file_put>`
      - 
      - :ref:`configure <rest_api_datastores_configure>`, :ref:`target <rest_api_datastores_target>`, :ref:`update <rest_api_datastores_update>`, :ref:`charset <rest_api_datastores_charset>`
    * - DELETE
@@ -207,13 +209,13 @@ The ``extension`` parameter specifies the type of data being uploaded. The follo
 
 .. _rest_api_datastores_file_put:
 
-When executing a PUT request with a file data store, it can be as a standalone file or a zipped archive. The standalone file method is only applicable to data stores that work from a single file (for example GML). Data stores that require multiple files (such as shapefiles) must be sent as an archive.
+A file can be PUT to a data store as a standalone or zipped archive file. Standalone files are only suitable for data stores that work with a single file such as a GML store. Data stores that work with multiple files, such as the shapefile store, must be sent as a zip archive.
 
-When uploading a standalone file the content type should be appropriately set based on the file type. When uploading an archive the ``Content-type`` should be set to ``application/zip``. 
+When uploading a standalone file, set the ``Content-type`` appropriately based on the file type. If you are loading a zip archive, set the ``Content-type`` to ``application\zip``.
 
 .. _rest_api_datastores_configure:
 
-The ``configure`` parameter is used to control how the data store is configured upon file upload. It can take one of the three values:
+The ``configure`` parameter controls how the data store is configured upon file upload. It can take one of the three values:
 
 * ``first``—(*Default*) Only setup the first feature type available in the data store.
 * ``none``—Do not configure any feature types.
@@ -221,15 +223,15 @@ The ``configure`` parameter is used to control how the data store is configured 
 
 .. _rest_api_datastores_target:
 
-The ``target`` parameter is used to control the type of data store that is created on the server when the data store that is the target of the PUT request does not exist. The allowable values for this parameter are the same as for the :ref:`extension parameter <rest_api_datastores_extension>`. 
+The ``target`` parameter is used to control the type of data store that is created on the server when the data store that is the target of the PUT request does not exist. The allowed values for this parameter are the same as for the :ref:`extension parameter <rest_api_datastores_extension>`. 
 
 .. _rest_api_datastores_update:
 
-The ``update`` parameter is used to control how existing data is handled when the file is PUT into a data store that already exists and already contains a schema that matches the content of the file. It can take one of the two values:
+The ``update`` parameter controls how existing data is handled when the file is PUT into a data store that already exists and already contains a schema that matches the content of the file. The parameter accepts one of the following values:
 
 * ``append``—Data being uploaded is appended to the existing data. This is the default.
 * ``overwrite``—Data being uploaded replaces any existing data.
 
 .. _rest_api_datastores_charset:
 
-The ``charset`` parameter is used to specify the character encoding of the file being uploaded (such as "ISO-8559-1"). 
+The ``charset`` parameter specifies the character encoding of the file being uploaded (such as "ISO-8559-1"). 

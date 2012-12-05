@@ -31,9 +31,11 @@ A ``format`` specifies how a particular resource should be represented. A format
 * In an operation to specify what representation should be returned to the client
 * In a POST or PUT operation to specify the representation being sent to the server
 
-In a **GET** operation the format can be specified in two ways. The first is with the ``Accept`` header. For instance, setting the header to ``"Accept: text/xml"`` would specify the desire to have the resource returned as XML. The second method of specifying the format is via file extension. For example, given a resource ``foo``, to request a representation of ``foo`` as XML, the request URI would end with ``/foo.xml``. To request a representation as JSON, the request URI would end with ``/foo.json``. When no format is specified the server will use its own internal format, usually HTML.
+In a **GET** operation the format can be specified in two ways.
 
-In a **POST** or **PUT** operation the format specifies both the representation of the content being sent to the server, and the representation of the response to be sent back. The representation of content being sent to the server is specified with the ``Content-type`` header. For example, to send a representation in XML, use ``"Content-type: text/xml"`` or ``"Content-type: application/xml"``. The representation of content being sent to the server is specified with the ``Accept`` header as with the GET request.
+There are two ways to specify the format for a GET operation. The first option uses the ``Accept`` header. For example, with the header set to ``"Accept: text/xml"`` the resource would be returned as XML. The second option of setting the format is via a file extension. For example, given a resource ``foo``, to request a representation of ``foo`` as XML, the request URI would end with ``/foo.xml``. To request a representation as JSON, the request URI would end with ``/foo.json``. When no format is specified the server will use its own internal format, usually HTML.
+
+In a **POST** or **PUT** operation the format specifies both the representation of the content sent to the server, and the representation of the response returned. The representation of content being sent to the server is specified with the ``Content-type`` header. For example, to send a representation in XML, use ``"Content-type: text/xml"`` or ``"Content-type: application/xml"``. The representation of content being sent to the server is specified with the ``Accept`` header as with the GET request.
 
 The following table defines the ``Content-type`` values for each format: 
 

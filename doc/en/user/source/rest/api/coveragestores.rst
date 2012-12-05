@@ -3,7 +3,7 @@
 Coverage stores
 ===============
 
-A ``coverage store`` is a source of spatial data that is raster based.
+A ``coverage store`` contains raster format spatial data.
 
 ``/workspaces/<ws>/coveragestores[.<format>]``
 ----------------------------------------------
@@ -114,12 +114,12 @@ Parameters
 
 .. _rest_api_coveragestores_recurse:
 
-The ``recurse`` parameter is used to recursively delete all coverages contained by the specified coverage store. Allowable values for this parameter are "true" or "false". The default value is "false".
+The ``recurse`` parameter recursively deletes all layers referenced by the coverage store. Allowed values for this parameter are "true" or "false". The default value is "false".
 
 ``/workspaces/<ws>/coveragestores/<cs>/file[.<extension>]``
 -----------------------------------------------------------
 
-This operation uploads a file containing spatial data into an existing coverage store, or will create a new coverage store if it doesn't already exist.
+This end point allows a file containing spatial data to be added (via a POST or PUT) into an existing coverage store, or will create a new coverage store if it doesn't already exist.
 
 .. list-table::
    :header-rows: 1
@@ -143,7 +143,7 @@ This operation uploads a file containing spatial data into an existing coverage 
      - 
      - :ref:`recalculate <rest_api_coveragestores_recalculate>`
    * - PUT
-     - Creates or overwrites the files for coverage store ``cs``.
+     - Creates or overwrites the files for coverage store ``cs``
      - 200
      - :ref:`See note below <rest_api_coveragestores_file_put>`
      - 
@@ -159,9 +159,9 @@ This operation uploads a file containing spatial data into an existing coverage 
 
 .. note::
 
-   When the file for a coverage store is PUT, it can be as a standalone file, or as a zipped archive. The standalone file method is only applicable to coverage stores that work from a single file such as GeoTIFF. Coverage stores like Image mosaic must be sent as a zip archive.
+   A file can be PUT to a coverage store as a standalone or zipped archive file. Standalone files are only suitable for coverage stores that work with a single file such as GeoTIFF store. Coverage stores that work with multiple files, such as the ImageMosaic store, must be sent as a zip archive.
 
-   When uploading a standalone file the content type should be appropriately set based on the file type. When uploading a zip archive the ``Content-type`` should be set to ``application/zip``. 
+   When uploading a standalone file, set the ``Content-type`` appropriately based on the file type. If you are loading a zip archive, set the ``Content-type`` to ``application\zip``.
 
 Exceptions
 ~~~~~~~~~~
@@ -196,7 +196,7 @@ following extensions are supported:
 
 .. _rest_api_coveragestores_configure:
 
-The ``configure`` parameter is used to control how the coverage store is configured upon file upload. It can take one of the three values:
+The ``configure`` parameter controls how the coverage store is configured upon file upload. It can take one of the three values:
 
 * ``first``—(*Default*) Only setup the first feature type available in the coverage store.
 * ``none``—Do not configure any feature types.
@@ -204,21 +204,14 @@ The ``configure`` parameter is used to control how the coverage store is configu
 
 .. _rest_api_coveragestores_coveragename:
 
-The ``coverageName`` parameter is used to specify the name of the coverage
-within the coverage store. This parameter is only relevant if the ``configure``
-parameter is not equal to "none". If not specified the resulting coverage will
-receive the same name as its containing coverage store.
+The ``coverageName`` parameter specifies the name of the coverage within the coverage store. This parameter is only relevant if the ``configure`` parameter is not equal to "none". If not specified the resulting coverage will receive the same name as its containing coverage store.
 
-.. note::
-
-   Currently the relationship between a coverage store and a coverage is one to
-   one. However there is currently work underway to support multi-dimensional
-   coverages, so in the future this parameter is likely to change.
+.. note:: At present a one-to-one relationship exists between a coverage store and a coverage. However, there are plans to support multidimensional coverages, so this parameter may change.
 
 .. _rest_api_coveragestores_recalculate:
 
-The ``recalculate`` parameter specifies whether to recalculate any bounding boxes for a coverage. Some properties of coverages are automatically recalculated when necessary. In particular, the native bounding box is recalculated when the projection or projection policy are changed, and the lat/lon bounding box is recalculated when the native bounding box is recalculated, or when a new native bounding box is explicitly provided in the request. (The native and lat/lon bounding boxes are not automatically recalculated when they are explicitly included in the request.) In addition, the client may explicitly request a fixed set of fields to calculate, by including a comma-separated list of their names in the ``recalculate`` parameter. For example:
+The ``recalculate`` parameter specifies whether to recalculate any bounding boxes for a coverage. Some properties of coverages are automatically recalculated when necessary. In particular, the native bounding box is recalculated when the projection or projection policy is changed. The lat/long bounding box is recalculated when the native bounding box is recalculated or when a new native bounding box is explicitly provided in the request. (The native and lat/long bounding boxes are not automatically recalculated when they are explicitly included in the request.) In addition, the client may explicitly request a fixed set of fields to calculate, by including a comma-separated list of their names in the ``recalculate`` parameter. For example:
 
-* ``recalculate=`` (empty parameter): Do not calculate any fields, regardless of the projection, projection policy, etc. This might be useful to avoid slow recalculation when operating against large datasets.
-* ``recalculate=nativebbox``: Recalculate the native bounding box, but do not recalculate the lat/lon bounding box.
-* ``recalculate=nativebbox,latlonbbox``: Recalculate both the native bounding box and the lat/lon bounding box.
+* ``recalculate=`` (empty parameter)—Do not calculate any fields, regardless of the projection, projection policy, etc. This might be useful to avoid slow recalculation when operating against large datasets.
+* ``recalculate=nativebbox``—Recalculate the native bounding box, but do not recalculate the lat/long bounding box.
+* ``recalculate=nativebbox,latlonbbox``—Recalculate both the native bounding box and the lat/long bounding box.
