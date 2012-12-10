@@ -3,7 +3,7 @@
 API details
 ===========
 
-This page contains information on how the REST API architecture operates.
+This page contains information on the REST API architecture.
 
 .. todo:: This section needs a better intro.
 
@@ -19,12 +19,35 @@ Return codes
 
 An HTTP request uses a "return code" (status code) to relay the outcome of the request to the client. Different status codes are used for various purposes through out this document. These codes are described in detail by the `HTTP specification <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>`_.
 
-.. todo:: In addition to linking to the above, should have examples of the common REST codes (200, 201, 405)
+The most common return codes are listed below, along with their descriptions:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Return code
+     - Description
+     - Notes
+   * - 200
+     - OK
+     - The request was successful
+   * - 201
+     - Created
+     - A new resource was successfully created, such as a new feature type or data store
+   * - 403
+     - Forbidden
+     - Often denotes a permissions mismatch
+   * - 404
+     - Not Found
+     - Endpoint or resource was not at the indicated location
+   * - 405
+     - Method Not Allowed
+     - Often denotes an endpoint accessed with an incorrect operation (for example, a GET request where a PUT/POST is indicated)
+   * - 500
+     - Internal Server Error
+     - Often denotes a syntax error in the request
 
 Formats and representations
 ---------------------------
-
-.. todo:: What's the difference between a format and a representation?
 
 A ``format`` specifies how a particular resource should be represented. A format is used:
 
@@ -52,6 +75,3 @@ The following table defines the ``Content-type`` values for each format:
      - ``application/html``
    * - SLD
      - ``application/vnd.ogc.sld+xml``
-
-.. todo:: What about Accept?  What about text/xml, as mentioned above?
-
