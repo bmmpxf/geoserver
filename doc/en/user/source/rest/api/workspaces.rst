@@ -39,14 +39,6 @@ Controls all workspaces.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/workspaces_html.txt>`
-* :download:`XML <../representations/workspaces_xml.txt>`
-* :download:`JSON <../representations/workspaces_json.txt>`
-
-
 ``/workspaces/<ws>[.<format>]``
 -------------------------------
 
@@ -86,13 +78,6 @@ Controls a specific workspace.
      -
      - :ref:`recurse <rest_api_workspaces_recurse>`
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/workspace_html.txt>`
-* :download:`XML <../representations/workspace_xml.txt>`
-* :download:`JSON <../representations/workspace_json.txt>`
-
 Exceptions
 ~~~~~~~~~~
 
@@ -114,6 +99,7 @@ Parameters
 .. _rest_api_workspaces_recurse:
 
 The ``recurse`` parameter recursively deletes all layers referenced by the specified workspace, including data stores, coverage stores, feature types, and so on. Allowed values for this parameter are "true" or "false". The default value is "false".
+
 
 ``/workspaces/default[.<format>]``
 ----------------------------------
@@ -149,7 +135,6 @@ Controls the default workspace.
      -
      -
 
-.. todo:: No representations?
 
 ``/workspaces/<ws>/settings[.<format>]``
 ----------------------------------------
@@ -184,11 +169,4 @@ Controls settings on a specific workspace.
      - 200
      - XML, JSON
      -
-
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/workspaceSettings_html.txt>`
-* :download:`XML <../representations/workspaceSettings_xml.txt>`
-* :download:`JSON <../representations/workspaceSettings_json.txt>`
 

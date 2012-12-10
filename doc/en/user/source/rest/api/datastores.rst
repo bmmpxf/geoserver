@@ -39,12 +39,6 @@ Controls all data stores in a given workspace.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/datastores_html.txt>`
-* :download:`XML <../representations/datastores_xml.txt>`
-* :download:`JSON <../representations/datastores_json.txt>`
 
 ``/workspaces/<ws>/datastores/<ds>[.<format>]``
 -----------------------------------------------
@@ -85,12 +79,6 @@ Controls a particular data store in a given workspace.
      -
      - :ref:`recurse <rest_api_datastores_recurse>`
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/datastore_html.txt>`
-* :download:`XML <../representations/datastore_xml.txt>`
-* :download:`JSON <../representations/datastore_json.txt>`
 
 Exceptions
 ~~~~~~~~~~
@@ -235,3 +223,4 @@ The ``update`` parameter controls how existing data is handled when the file is 
 .. _rest_api_datastores_charset:
 
 The ``charset`` parameter specifies the character encoding of the file being uploaded (such as "ISO-8559-1"). 
+

@@ -39,12 +39,6 @@ Controls all layer groups.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/layergroups_html.txt>`
-* :download:`XML <../representations/layergroups_xml.txt>`
-* :download:`JSON <../representations/layergroups_json.txt>`
 
 ``/layergroups/<lg>[.<format>]``
 --------------------------------
@@ -80,13 +74,6 @@ Controls a particular layer group.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/layergroup_html.txt>`
-* :download:`XML <../representations/layergroup_xml.txt>`
-* :download:`JSON <../representations/layergroup_json.txt>`
-
 Exceptions
 ~~~~~~~~~~
 
@@ -101,6 +88,7 @@ Exceptions
      - 400
    * - PUT that changes name of layer group
      - 403
+
  
 ``/workspaces/<ws>/layergroups[.<format>]``
 -------------------------------------------
@@ -136,13 +124,6 @@ Controls all layer groups in a given workspace.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/layergroups_html.txt>`
-* :download:`XML <../representations/layergroups_xml.txt>`
-* :download:`JSON <../representations/layergroups_json.txt>`
-
 
 ``/workspaces/<ws>/layergroups/<lg>[.<format>]``
 ------------------------------------------------
@@ -177,12 +158,5 @@ Controls a particular layer group in a given workspace.
      - 200
      -
      -
-
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/layergroup_html.txt>`
-* :download:`XML <../representations/layergroup_xml.txt>`
-* :download:`JSON <../representations/layergroup_json.txt>`
 
 

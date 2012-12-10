@@ -37,4 +37,3 @@ Reloads the GeoServer catalog and configuration from disk. This operation is use
      -
      -
      
-.. todo:: No representation.

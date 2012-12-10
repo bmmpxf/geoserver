@@ -39,12 +39,6 @@ Controls all coverage stores in a given workspace.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/coveragestores_html.txt>`
-* :download:`XML <../representations/coveragestores_xml.txt>`
-* :download:`JSON <../representations/coveragestores_json.txt>`
 
 ``/workspaces/<ws>/coveragestores/<cs>[.<format>]``
 ---------------------------------------------------
@@ -85,13 +79,6 @@ Controls a particular coverage store in a given workspace.
      -
      - :ref:`recurse <rest_api_coveragestores_recurse>`
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/coveragestore_html.txt>`
-* :download:`XML <../representations/coveragestore_xml.txt>`
-* :download:`JSON <../representations/coveragestore_json.txt>`
-
 Exceptions
 ~~~~~~~~~~
 
@@ -115,6 +102,7 @@ Parameters
 .. _rest_api_coveragestores_recurse:
 
 The ``recurse`` parameter recursively deletes all layers referenced by the coverage store. Allowed values for this parameter are "true" or "false". The default value is "false".
+
 
 ``/workspaces/<ws>/coveragestores/<cs>/file[.<extension>]``
 -----------------------------------------------------------
@@ -215,3 +203,4 @@ The ``recalculate`` parameter specifies whether to recalculate any bounding boxe
 * ``recalculate=`` (empty parameter)—Do not calculate any fields, regardless of the projection, projection policy, etc. This might be useful to avoid slow recalculation when operating against large datasets.
 * ``recalculate=nativebbox``—Recalculate the native bounding box, but do not recalculate the lat/long bounding box.
 * ``recalculate=nativebbox,latlonbbox``—Recalculate both the native bounding box and the lat/long bounding box.
+

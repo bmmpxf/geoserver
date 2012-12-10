@@ -39,13 +39,6 @@ Controls all global settings.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/settings_html.txt>`
-* :download:`XML <../representations/settings_xml.txt>`
-* :download:`JSON <../representations/settings_json.txt>`
-
 
 ``/settings/contact[.<format>]``
 --------------------------------
@@ -80,11 +73,4 @@ Controls global contact information only.
      - 405
      -
      -
-
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/contact_html.txt>`
-* :download:`XML <../representations/contact_xml.txt>`
-* :download:`JSON <../representations/contact_json.txt>`
 

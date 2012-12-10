@@ -39,13 +39,6 @@ Controls all namespaces.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/namespaces_html.txt>`
-* :download:`XML <../representations/namespaces_xml.txt>`
-* :download:`JSON <../representations/namespaces_json.txt>`
-
 
 ``/namespaces/<ns>[.<format>]``
 -------------------------------
@@ -81,13 +74,6 @@ Controls a particular namespace.
      - XML, JSON
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/namespace_html.txt>`
-* :download:`XML <../representations/namespace_xml.txt>`
-* :download:`JSON <../representations/namespace_json.txt>`
-
 Exceptions
 ~~~~~~~~~~
 
@@ -102,6 +88,7 @@ Exceptions
      - 403
    * - DELETE against a namespace whose corresponding workspace is non-empty
      - 403
+
 
 ``/namespaces/default[.<format>]``
 ----------------------------------
@@ -137,4 +124,3 @@ Controls the default namespace.
      -
      -
 
-.. todo:: No representation?

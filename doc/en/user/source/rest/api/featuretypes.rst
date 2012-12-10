@@ -49,13 +49,6 @@ Controls all feature types in a given data store / workspace.
 
 .. note:: When creating a new feature type via ``POST``, if no underlying dataset with the specified name exists an attempt will be made to create it. This will work only in cases where the underlying data format supports the creation of new types (such as a database). When creating a feature type in this manner the client should include all attribute information in the feature type representation.
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/featuretypes_html.txt>`
-* :download:`XML <../representations/featuretypes_xml.txt>`
-* :download:`JSON <../representations/featuretypes_json.txt>`
-
 Exceptions
 ~~~~~~~~~~
 
@@ -82,6 +75,7 @@ The ``list`` parameter is used to control the category of feature types that are
 * ``available``—Only feature types that haven't been configured but are available from the specified data store will be returned. 
 * ``available_with_geom``—Same as ``available`` but only includes feature types that have a geometry attribute.
 * ``all``—The union of ``configured`` and ``available``.
+
 
 ``/workspaces/<ws>/datastores/<ds>/featuretypes/<ft>[.<format>]``
 -----------------------------------------------------------------
@@ -122,13 +116,6 @@ Controls a particular feature type in a given data store and workspace.
      -
      - :ref:`recurse <rest_api_featuretypes_recurse>`
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/featuretype_html.txt>`
-* :download:`XML <../representations/featuretype_xml.txt>`
-* :download:`JSON <../representations/featuretype_json.txt>`
-
 Exceptions
 ~~~~~~~~~~
 
@@ -158,3 +145,4 @@ The ``recalculate`` parameter specifies whether to recalculate any bounding boxe
 * ``recalculate=`` (empty parameter): Do not calculate any fields, regardless of the projection, projection policy, etc. This might be useful to avoid slow recalculation when operating against large datasets.
 * ``recalculate=nativebbox``: Recalculate the native bounding box, but do not recalculate the lat/long bounding box.
 * ``recalculate=nativebbox,latlonbbox``: Recalculate both the native bounding box and the lat/long bounding box.
+

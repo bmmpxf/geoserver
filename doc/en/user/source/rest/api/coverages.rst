@@ -41,13 +41,6 @@ Controls all coverages in a given coverage store and workspace.
      -
      -
    
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/coverages_html.txt>`
-* :download:`XML <../representations/coverages_xml.txt>`
-* :download:`JSON <../representations/coverages_json.txt>`
-
 
 ``/workspaces/<ws>/coveragestores/<cs>/coverages/<c>[.<format>]``
 -----------------------------------------------------------------
@@ -88,12 +81,6 @@ Controls a particular coverage in a given coverage store and workspace.
      -
      - :ref:`recurse <rest_api_coverages_recurse>`
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/coverage_html.txt>`
-* :download:`XML <../representations/coverage_xml.txt>`
-* :download:`JSON <../representations/coverage_json.txt>`
 
 Exceptions
 ~~~~~~~~~~
@@ -117,3 +104,4 @@ Parameters
 .. _rest_api_coverages_recurse:
 
 The ``recurse`` parameter recursively deletes all layers referenced by the specified coverage. Permitted values for this parameter are "true" or "false". The default value is "false".
+

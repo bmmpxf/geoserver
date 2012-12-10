@@ -39,12 +39,6 @@ Controls all layers.
      -
      -
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/layers_html.txt>`
-* :download:`XML <../representations/layers_xml.txt>`
-* :download:`JSON <../representations/layers_json.txt>`
 
 ``/layers/<l>[.<format>]``
 --------------------------
@@ -85,13 +79,6 @@ Controls a particular layer.
      -
      - :ref:`recurse <rest_api_layers_recurse>`
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/layer_html.txt>`
-* :download:`XML <../representations/layer_xml.txt>`
-* :download:`JSON <../representations/layer_json.txt>`
-
 Exceptions
 ~~~~~~~~~~
 
@@ -113,6 +100,7 @@ Parameters
 .. _rest_api_layers_recurse:
 
 The ``recurse`` parameter recursively deletes all layers referenced by the specified layer. Allowed values for this parameter are "true" or "false". The default value is "false".
+
 
 ``/layers/<l>/styles[.<format>]``
 ---------------------------------
@@ -148,4 +136,3 @@ Controls all styles in a given layer.
      -
      -
 
-.. todo:: No representation.

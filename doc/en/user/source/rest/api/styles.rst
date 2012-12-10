@@ -49,13 +49,6 @@ Controls all styles.
 
 When executing a POST or PUT request with an SLD style, the ``Content-type`` header should be set to ``application/vnd.ogc.sld+xml``.
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/styles_html.txt>`
-* :download:`XML <../representations/styles_xml.txt>`
-* :download:`JSON <../representations/styles_json.txt>`
-
 Parameters
 ~~~~~~~~~~
 
@@ -97,14 +90,6 @@ Controls a given style.
      - 200
      -
      -
-
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`SLD <../representations/style_sld.txt>`
-* :download:`HTML <../representations/style_html.txt>`
-* :download:`XML <../representations/style_xml.txt>`
-* :download:`JSON <../representations/style_json.txt>`
 
 Exceptions
 ~~~~~~~~~~
@@ -168,13 +153,6 @@ Controls all styles in a given workspace.
      -
      - :ref:`purge <rest_api_styles_purge>`
 
-Representations
-~~~~~~~~~~~~~~~
-
-* :download:`HTML <../representations/styles_html.txt>`
-* :download:`XML <../representations/styles_xml.txt>`
-* :download:`JSON <../representations/styles_json.txt>`
-
 
 ``/workspaces/<ws>/styles/<s>[.<format>]``
 ------------------------------------------
@@ -210,12 +188,4 @@ Controls a particular style in a given workspace.
      - 200
      -
      -
-
-Representations
-~~~~~~~~~~~~~~~
-
- * :download:`SLD <../representations/style_sld.txt>`
- * :download:`HTML <../representations/style_html.txt>`
- * :download:`XML <../representations/style_xml.txt>`
- * :download:`JSON <../representations/style_json.txt>`
 
