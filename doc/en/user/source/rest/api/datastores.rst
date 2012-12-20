@@ -6,7 +6,7 @@ Data stores
 A ``data store`` contains vector format spatial data. It can be a file (such as a shapefile), a database (such as PostGIS), or a server (such as a :ref:`remote Web Feature Service <data_external_wfs>`).
 
 ``/workspaces/<ws>/datastores[.<format>]``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------
 
 Controls all data stores in a given workspace.
 
@@ -105,21 +105,10 @@ Parameters
 The ``recurse`` parameter recursively deletes all layers referenced by the specified data store. Allowed values for this parameter are "true" or "false". The default value is "false".
 
 
-``/workspaces/<ws>/datastores/<ds>/file[.<extension>]``
--------------------------------------------------------
+``/workspaces/<ws>/datastores/<ds>/[file|url|external][.<extension>]``
+----------------------------------------------------------------------
 
-``/workspaces/<ws>/datastores/<ds>/url[.<extension>]``
-------------------------------------------------------
-
-``/workspaces/<ws>/datastores/<ds>/external[.<extension>]``
------------------------------------------------------------
-
-The three end points above allow a file containing spatial data to be added (via a POST or PUT) into an existing data store, or will create a new data store if it doesn't already exist.
-
-
-These three operations upload a file containing spatial data into an existing data store, or will create a new data store if it doesn't already exist.
-
-The ``file``, ``url``, and ``external`` endpoints are used to specify the method that is used to upload the file.
+These endpoints (``file``, ``url``, and ``external``) allow a file containing spatial data to be added (via a POST or PUT) into an existing data store, or will create a new data store if it doesn't already exist. The three endpoints are used to specify the method that is used to upload the file:
 
 * ``file``—Uploads a file from a local source. The body of the request is the file itself.
 * ``url``—Uploads a file from an remote source. The body of the request is a URL pointing to the file to upload. This URL must be visible from the server. 
