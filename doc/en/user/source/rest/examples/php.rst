@@ -1,22 +1,14 @@
 .. _rest_examples_php:
 
 PHP
-====
+===
 
-The examples in this section use the server-side scripting language 
-`PHP <http://php.net/index.php/>`_
-, a popular language for dynamic webpages. 
-PHP has 
-`cURL functions <http://php.net/manual/en/ref.curl.php/>`_ 
-, as well as 
-`XML functions <http://www.php.net/manual/en/refs.xml.php/>`_
-, making it a convenient method for performing batch processing
-through the Geoserver REST interface. The following scripts execute
-single requests, but can be easily modified with looping structures to perform
-batch processing.
+The examples in this section use the server-side scripting language `PHP <http://php.net/index.php/>`_, a popular language for dynamic webpages. PHP has `cURL functions <http://php.net/manual/en/ref.curl.php/>`_ , as well as 
+`XML functions <http://www.php.net/manual/en/refs.xml.php/>`_, making it a convenient method for performing batch processing through the Geoserver REST interface. The following scripts execute single requests, but can be easily modified with looping structures to perform batch processing.
 
 POST with PHP/cURL
------------------------
+------------------
+
 The following script attempts to add a new workspace.
 
 .. code-block:: php
@@ -117,7 +109,7 @@ Here are some possible values:
 For other codes see `cURL Error Codes <http://curl.haxx.se/libcurl/c/libcurl-errors.html>`_ and `HTTP Codes <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>`_.
 
 GET with PHP/cURL
----------------------
+-----------------
 
 The script above can be modified to perform a GET request to obtain
 the names of all workspaces by replacing the code blocks for required
@@ -142,11 +134,9 @@ The logfile should now include lines like::
   
   < HTTP/1.1 200 OK
 
-as well as some xml looking something like the example 
-:download:`here. <../representations/workspaces_xml.txt>`
-
 DELETE with PHP/cURL
-------------------------
+--------------------
+
 To delete the (empty) workspace we just created, the script is modified as follows:
 
 .. code-block:: php

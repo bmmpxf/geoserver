@@ -171,7 +171,7 @@ Parameters
 ~~~~~~~~~~
 
 ``extension``
-^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 The ``extension`` parameter specifies the type of coverage store. The
 following extensions are supported:
