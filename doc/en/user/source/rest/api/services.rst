@@ -15,7 +15,7 @@ Controls Web Coverage Service settings.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -50,7 +50,7 @@ Controls Web Coverage Service settings for a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -85,7 +85,7 @@ Controls Web Feature Service settings.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -120,7 +120,7 @@ Controls Web Feature Service settings for a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -156,7 +156,7 @@ Controls Web Map Service settings.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -191,7 +191,7 @@ Controls Web Map Service settings for a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET

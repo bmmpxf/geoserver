@@ -15,7 +15,7 @@ Controls all layers.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -50,7 +50,7 @@ Controls a particular layer.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -86,7 +86,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a layer that does not exist
      - 404
    * - PUT that changes name of layer
@@ -99,7 +99,10 @@ Parameters
 
 .. _rest_api_layers_recurse:
 
-The ``recurse`` parameter recursively deletes all layers referenced by the specified layer. Allowed values for this parameter are "true" or "false". The default value is "false".
+``recurse``
+^^^^^^^^^^^
+
+The ``recurse`` parameter recursively deletes all styles referenced by the specified layer. Allowed values for this parameter are "true" or "false". The default value is "false".
 
 
 ``/layers/<l>/styles[.<format>]``
@@ -112,7 +115,7 @@ Controls all styles in a given layer.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET

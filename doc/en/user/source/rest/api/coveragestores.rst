@@ -15,7 +15,7 @@ Controls all coverage stores in a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -50,7 +50,7 @@ Controls a particular coverage store in a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -86,7 +86,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a coverage store that does not exist
      - 404
    * - PUT that changes name of coverage store
@@ -101,6 +101,9 @@ Parameters
 
 .. _rest_api_coveragestores_recurse:
 
+``recurse``
+^^^^^^^^^^^
+
 The ``recurse`` parameter recursively deletes all layers referenced by the coverage store. Allowed values for this parameter are "true" or "false". The default value is "false".
 
 
@@ -114,7 +117,7 @@ This end point allows a file containing spatial data to be added (via a POST or 
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -158,7 +161,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a data store that does not exist
      - 404
    * - GET for a data store that is not file based
@@ -166,6 +169,9 @@ Exceptions
 
 Parameters
 ~~~~~~~~~~
+
+``extension``
+^^^^^^^^^^^^
 
 The ``extension`` parameter specifies the type of coverage store. The
 following extensions are supported:
@@ -184,6 +190,9 @@ following extensions are supported:
 
 .. _rest_api_coveragestores_configure:
 
+``configure``
+^^^^^^^^^^^^^
+
 The ``configure`` parameter controls how the coverage store is configured upon file upload. It can take one of the three values:
 
 * ``first``—(*Default*) Only setup the first feature type available in the coverage store.
@@ -192,11 +201,17 @@ The ``configure`` parameter controls how the coverage store is configured upon f
 
 .. _rest_api_coveragestores_coveragename:
 
+``coverageName``
+^^^^^^^^^^^^^^^^
+
 The ``coverageName`` parameter specifies the name of the coverage within the coverage store. This parameter is only relevant if the ``configure`` parameter is not equal to "none". If not specified the resulting coverage will receive the same name as its containing coverage store.
 
 .. note:: At present a one-to-one relationship exists between a coverage store and a coverage. However, there are plans to support multidimensional coverages, so this parameter may change.
 
 .. _rest_api_coveragestores_recalculate:
+
+``recalculate``
+^^^^^^^^^^^^^^^
 
 The ``recalculate`` parameter specifies whether to recalculate any bounding boxes for a coverage. Some properties of coverages are automatically recalculated when necessary. In particular, the native bounding box is recalculated when the projection or projection policy is changed. The lat/long bounding box is recalculated when the native bounding box is recalculated or when a new native bounding box is explicitly provided in the request. (The native and lat/long bounding boxes are not automatically recalculated when they are explicitly included in the request.) In addition, the client may explicitly request a fixed set of fields to calculate, by including a comma-separated list of their names in the ``recalculate`` parameter. For example:
 

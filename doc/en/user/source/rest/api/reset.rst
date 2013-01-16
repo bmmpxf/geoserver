@@ -13,7 +13,7 @@ Resets all store, raster, and schema caches. This operation is used to force Geo
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET

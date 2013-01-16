@@ -15,7 +15,7 @@ Controls all styles.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -54,6 +54,9 @@ Parameters
 
 .. _rest_api_styles_name:
 
+``name``
+^^^^^^^^
+
 The ``name`` parameter specifies the name to be given to the style. This option is most useful when executing a POST request with a style in SLD format, and an appropriate name can be not be inferred from the SLD itself.
 
 
@@ -67,7 +70,7 @@ Controls a given style.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -98,7 +101,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a style that does not exist
      - 404
    * - PUT that changes name of style
@@ -109,9 +112,12 @@ Exceptions
 Parameters
 ~~~~~~~~~~
 
+``purge``
+^^^^^^^^^
+
 .. _rest_api_styles_purge:
 
-The ``purge`` parameter specifies whether the underlying SLD file for the style should be deleted on disk. Allowable values for this parameter are "true" or "false". When set to ``true`` the underlying file will be deleted. 
+The ``purge`` parameter specifies whether the underlying SLD file for the style should be deleted on disk. Allowable values for this parameter are "true" or "false". When set to "true" the underlying file will be deleted. 
 
 
 ``/workspaces/<ws>/styles[.<format>]``
@@ -124,7 +130,7 @@ Controls all styles in a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -164,7 +170,7 @@ Controls a particular style in a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET

@@ -13,7 +13,7 @@ This operation provides the list of ``fonts`` available in GeoServer. It can be 
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET

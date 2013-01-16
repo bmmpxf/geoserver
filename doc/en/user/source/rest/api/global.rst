@@ -15,7 +15,7 @@ Controls all global settings.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -50,7 +50,7 @@ Controls global contact information only.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET

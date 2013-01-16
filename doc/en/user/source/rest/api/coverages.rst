@@ -17,7 +17,7 @@ Controls all coverages in a given coverage store and workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -52,7 +52,7 @@ Controls a particular coverage in a given coverage store and workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -89,7 +89,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a coverage that does not exist
      - 404
    * - PUT that changes name of coverage
@@ -102,6 +102,9 @@ Parameters
 ~~~~~~~~~~
 
 .. _rest_api_coverages_recurse:
+
+``recurse``
+^^^^^^^^^^^
 
 The ``recurse`` parameter recursively deletes all layers referenced by the specified coverage. Permitted values for this parameter are "true" or "false". The default value is "false".
 

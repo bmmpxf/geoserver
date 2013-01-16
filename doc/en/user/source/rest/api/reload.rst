@@ -13,7 +13,7 @@ Reloads the GeoServer catalog and configuration from disk. This operation is use
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET

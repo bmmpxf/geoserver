@@ -15,7 +15,7 @@ Controls all workspaces.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -49,7 +49,7 @@ Controls a specific workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -85,7 +85,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a workspace that does not exist
      - 404
    * - PUT that changes name of workspace
@@ -97,6 +97,9 @@ Parameters
 ~~~~~~~~~~
 
 .. _rest_api_workspaces_recurse:
+
+``recurse``
+^^^^^^^^^^^
 
 The ``recurse`` parameter recursively deletes all layers referenced by the specified workspace, including data stores, coverage stores, feature types, and so on. Allowed values for this parameter are "true" or "false". The default value is "false".
 
@@ -111,7 +114,7 @@ Controls the default workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -146,7 +149,7 @@ Controls settings on a specific workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET

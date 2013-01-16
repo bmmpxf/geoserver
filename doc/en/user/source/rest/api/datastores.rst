@@ -15,7 +15,7 @@ Controls all data stores in a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
    * - GET
@@ -50,7 +50,7 @@ Controls a particular data store in a given workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -87,7 +87,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a data store that does not exist
      - 404
    * - PUT that changes name of data store
@@ -101,6 +101,9 @@ Parameters
 ~~~~~~~~~~
 
 .. _rest_api_datastores_recurse:
+
+``recurse``
+^^^^^^^^^^^
 
 The ``recurse`` parameter recursively deletes all layers referenced by the specified data store. Allowed values for this parameter are "true" or "false". The default value is "false".
 
@@ -119,7 +122,7 @@ These endpoints (``file``, ``url``, and ``external``) allow a file containing sp
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -156,7 +159,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a data store that does not exist
      - 404
    * - GET for a data store that is not file based
@@ -165,6 +168,9 @@ Exceptions
 
 Parameters
 ~~~~~~~~~~
+
+``extension``
+^^^^^^^^^^^^^
 
 .. _rest_api_datastores_extension:
 
@@ -186,11 +192,16 @@ The ``extension`` parameter specifies the type of data being uploaded. The follo
 
 .. _rest_api_datastores_file_put:
 
-A file can be PUT to a data store as a standalone or zipped archive file. Standalone files are only suitable for data stores that work with a single file such as a GML store. Data stores that work with multiple files, such as the shapefile store, must be sent as a zip archive.
+.. note::
 
-When uploading a standalone file, set the ``Content-type`` appropriately based on the file type. If you are loading a zip archive, set the ``Content-type`` to ``application\zip``.
+   A file can be PUT to a data store as a standalone or zipped archive file. Standalone files are only suitable for data stores that work with a single file such as a GML store. Data stores that work with multiple files, such as the shapefile store, must be sent as a zip archive.
+
+   When uploading a standalone file, set the ``Content-type`` appropriately based on the file type. If you are loading a zip archive, set the ``Content-type`` to ``application\zip``.
 
 .. _rest_api_datastores_configure:
+
+``configure``
+^^^^^^^^^^^^^
 
 The ``configure`` parameter controls how the data store is configured upon file upload. It can take one of the three values:
 
@@ -200,9 +211,15 @@ The ``configure`` parameter controls how the data store is configured upon file 
 
 .. _rest_api_datastores_target:
 
-The ``target`` parameter is used to control the type of data store that is created on the server when the data store that is the target of the PUT request does not exist. The allowed values for this parameter are the same as for the :ref:`extension parameter <rest_api_datastores_extension>`. 
+``target``
+^^^^^^^^^^
+
+The ``target`` parameter determines what format or storage engine will be used when a new data store is created on the server for uploaded data. When importing data into an existing data store, it is ignored. The allowed values for this parameter are the same as for the :ref:`extension parameter <rest_api_datastores_extension>`. 
 
 .. _rest_api_datastores_update:
+
+``update``
+^^^^^^^^^^
 
 The ``update`` parameter controls how existing data is handled when the file is PUT into a data store that already exists and already contains a schema that matches the content of the file. The parameter accepts one of the following values:
 
@@ -210,6 +227,9 @@ The ``update`` parameter controls how existing data is handled when the file is 
 * ``overwrite``—Data being uploaded replaces any existing data.
 
 .. _rest_api_datastores_charset:
+
+``charset``
+^^^^^^^^^^^
 
 The ``charset`` parameter specifies the character encoding of the file being uploaded (such as "ISO-8559-1"). 
 

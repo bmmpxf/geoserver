@@ -16,7 +16,7 @@ Controls all feature types in a given data store / workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -56,7 +56,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a feature type that does not exist
      - 404
    * - PUT that changes name of feature type
@@ -68,6 +68,9 @@ Parameters
 ~~~~~~~~~~
 
 .. _rest_api_featuretypes_list:
+
+``list``
+^^^^^^^^
 
 The ``list`` parameter is used to control the category of feature types that are returned. It can take one of the following values:
 
@@ -87,7 +90,7 @@ Controls a particular feature type in a given data store and workspace.
 
    * - Method
      - Action
-     - Return Code
+     - Status code
      - Formats
      - Default Format
      - Parameters
@@ -123,7 +126,7 @@ Exceptions
    :header-rows: 1
 
    * - Exception
-     - Return Code
+     - Status code
    * - GET for a feature type that does not exist
      - 404
    * - PUT that changes name of feature type
@@ -136,9 +139,15 @@ Parameters
 
 .. _rest_api_featuretypes_recurse:
 
-The ``recurse`` parameter recursively deletes all layers referenced by the specified feature type. Allowed values for this parameter are "true" or "false". The default value is "false".
+``recurse``
+^^^^^^^^^^^
+
+The ``recurse`` parameter recursively deletes all layers referenced by the specified featuretype. Allowed values for this parameter are "true" or "false". The default value is "false". A DELETE request with ``recurse=false`` will fail if any layers reference the featuretype.
 
 .. _rest_api_featuretypes_recalculate:
+
+``recalculate``
+^^^^^^^^^^^^^^^
 
 The ``recalculate`` parameter specifies whether to recalculate any bounding boxes for a feature type. Some properties of feature types are automatically recalculated when necessary. In particular, the native bounding box is recalculated when the projection or projection policy are changed, and the lat/long bounding box is recalculated when the native bounding box is recalculated, or when a new native bounding box is explicitly provided in the request. (The native and lat/long bounding boxes are not automatically recalculated when they are explicitly included in the request.) In addition, the client may explicitly request a fixed set of fields to calculate, by including a comma-separated list of their names in the ``recalculate`` parameter. For example:
 

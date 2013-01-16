@@ -12,7 +12,6 @@ The examples in this section use `cURL <http://curl.haxx.se/>`_, a command line 
    * Deleting a workspace/store/featuretype/style/layergroup
    * Renaming a workspace/store/featuretype/style/layergroup
 
-.. todo:: This page is long. Should it be split into parts? Individually or by sections? How would we subdivide?
 
 Adding a new workspace
 ----------------------
@@ -69,7 +68,7 @@ This shows that the workspace can contain "``dataStores``" (for :ref:`vector dat
 
 .. note:: 
 
-   Although the ``Accept`` header is not strictly necessary in the example above, including it conforms to the REST specification. The following request omits the ``Accept`` header, but will return the same response as above.
+   The ``Accept`` header is optional. The following request omits the ``Accept`` header, but will return the same response as above.
 
    .. code-block:: console
 
@@ -84,8 +83,6 @@ In this example a new store will be created by uploading a shapefile.
 The following request uploads a zipped shapefile named ``roads.zip`` and creates a new store named ``roads``.
 
 .. note:: Each code block below contains a single command that may be extended over multiple lines.
-
-.. todo:: What is the syntax for running this command when roads.zip isn't in the same path?
 
 .. code-block:: console
 
@@ -129,10 +126,9 @@ The response should look like this:
         href="http://localhost:8080/geoserver/rest/workspaces/acme/datastores/roads/featuretypes.xml" 
         type="application/xml"/>
      </featureTypes>
+   </dataStore>
 
-By default when a shapefile is uploaded, a feature type is automatically created. (See :ref:`webadmin_layers` page for details on how to control this behavior.) The feature type information can be retrieved as XML with a GET request:
-
-.. todo:: The link above doesn't appear to talk about how to control whether a feature type is automatically created.  I think the text may be trying to say that one can disable a feature type there, but it's unclear.
+By default when a shapefile is uploaded, a feature type is automatically created. The feature type information can be retrieved as XML with a GET request:
 
 .. code-block:: console
 
@@ -293,7 +289,7 @@ The response in this case would be:
      </attribution>
    </layer>
 
-When the layer is created, GeoServer assigns a default style to the layer that matches the geometry of the layer. In this case a style named ``line`` is assigned to the layer. This style can viewed with a WMS GetMap request::
+When the layer is created, GeoServer assigns a default style to the layer that matches the geometry of the layer. In this case a style named ``line`` is assigned to the layer. This style can viewed with a WMS request::
 
   http://localhost:8080/geoserver/wms/reflect?layers=acme:roads
 
@@ -309,11 +305,11 @@ If executed correctly, the response should contain the following::
 
   < HTTP/1.1 200 OK
 
-The new style can be viewed with the same GetMap request as above::
+The new style can be viewed with the same WMS request as above::
 
   http://localhost:8080/geoserver/wms/reflect?layers=acme:roads
 
-.. todo:: The GetMap request above results in an "Internal error featureType: acme:roads does not have a properly configured datastore"  Tested on 2.2.2.
+.. todo:: The WMS request above results in an "Internal error featureType: acme:roads does not have a properly configured datastore"  Tested on 2.2.2.
 
 
 Adding a PostGIS database
@@ -490,12 +486,12 @@ The following request creates the new layer group:
 
 .. note:: Each code block below contains a single command that may be extended over multiple lines.
 
-.. todo::  Why does this example use -d @filename.xml and the previous example use -T filename.xml?
-
 .. code-block:: console
 
    curl -v -u admin:geoserver -XPOST -d @nycLayerGroup.xml -H "Content-type: text/xml" 
      http://localhost:8080/geoserver/rest/layergroups
+
+.. note:: The argument ``-d@filename.xml`` in this example is used to send a file as the body of an HTTP request with a POST method. The argument ``-T filename.xml`` used in the previous example was used to send a file as the body of an HTTP request with a PUT method.
 
 This layer group can be viewed with a WMS GetMap request::
 

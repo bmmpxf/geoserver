@@ -5,26 +5,22 @@ API details
 
 This page contains information on the REST API architecture.
 
-.. todo:: This section needs a better intro.
-
 Authentication
 --------------
 
-Requests that modify resources (POST, PUT, and DELETE operations) require the client to be authenticated. Currently the only supported method of authentication is Basic authentication. See the :ref:`examples <rest_examples>` section for examples of how to perform authentication with various clients and environments.
+Requests that modify resources (POST, PUT, and DELETE operations) require the client to be authenticated. By default, method of authentication used is Basic authentication. See the :ref:`security` section for how to change the authentication method.
 
-.. todo:: Aren't there other ways to authenticate now that there is a new security subsystem?
-
-Return codes
+Status codes
 ------------
 
-An HTTP request uses a "return code" (status code) to relay the outcome of the request to the client. Different status codes are used for various purposes through out this document. These codes are described in detail by the `HTTP specification <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>`_.
+An HTTP request uses a status code to relay the outcome of the request to the client. Different status codes are used for various purposes through out this document. These codes are described in detail by the `HTTP specification <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>`_.
 
-The most common return codes are listed below, along with their descriptions:
+The most common status codes are listed below, along with their descriptions:
 
 .. list-table::
    :header-rows: 1
 
-   * - Return code
+   * - Status code
      - Description
      - Notes
    * - 200
