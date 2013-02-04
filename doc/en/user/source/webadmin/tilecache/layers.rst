@@ -67,5 +67,5 @@ To add in a layer from GeoServer (if it wasn't set up to be added automatically)
 
    *Adding a new cached layer*
 
-You have two options for layer configuration. The first option is to load the layer using the default (global) settings. To do this, select the layer you wish to start caching, and click the :guilabel:`Configure selected layers with caching defaults` link. The second option is to configure the caching parameters manually, via the :ref:`layer configuration <webadmin_layers>` pages. To do this, just click the layer name itself.
+You have two options for layer configuration. The first option is to load the layer using the default (global) settings. To do this, select the layer you wish to start caching, and click the :guilabel:`Configure selected layers with caching defaults` link. The second option is to configure the caching parameters manually, via the :ref:`layer configuration <webadmin_data_layers>` pages. To do this, just click the layer name itself.
 

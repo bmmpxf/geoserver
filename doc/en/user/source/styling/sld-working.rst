@@ -16,7 +16,7 @@ Any number of additional styles can be associated with a layer,
 one of which is defined to be the default style for rendering the layer.
 This allows layers to have appropriate styles advertised in the WMS ``GetCapabilities`` document.
 A layer's styles can be changed at any time 
-using the :ref:`webadmin_layers` page of the :ref:`web_admin`.  
+using the :ref:`webadmin_data_layers` page of the :ref:`web_admin`.  
 Note that when adding a layer and a style to GeoServer at the same time, the style should be added first, 
 so that the new layer can be associated with the style immediately. 
 

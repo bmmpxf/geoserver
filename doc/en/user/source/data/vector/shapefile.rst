@@ -50,4 +50,4 @@ When finished, click :guilabel:`Save`.
 Configuring a shapefile layer
 -----------------------------
 
-Shapefiles contain exactly one layer, which needs to be added as a new layer before it will be able to be served by GeoServer.  See the section on :ref:`webadmin_layers` for how to add and edit a new layer.
+Shapefiles contain exactly one layer, which needs to be added as a new layer before it will be able to be served by GeoServer.  See the section on :ref:`webadmin_data_layers` for how to add and edit a new layer.

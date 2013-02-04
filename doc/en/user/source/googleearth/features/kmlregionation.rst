@@ -39,4 +39,4 @@ In most cases, the **best_guess** strategy is sufficient.
 Setting Regionation Parameters
 ------------------------------
 
-Regionation strategies and attributes are featuretype-specific, and therefore are set in the :ref:`webadmin_layers` editing page of the :ref:`web_admin`.  This can be navigated to by selecting 'Layers' on the left sidebar.
+Regionation strategies and attributes are featuretype-specific, and therefore are set in the :ref:`webadmin_data_layers` editing page of the :ref:`web_admin`.  This can be navigated to by selecting 'Layers' on the left sidebar.

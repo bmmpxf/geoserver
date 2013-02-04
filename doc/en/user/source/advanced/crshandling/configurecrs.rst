@@ -6,7 +6,7 @@ Coordinate Reference System Configuration
 When adding data, GeoServer tries to inspect data headers looking for an EPSG code:
 
 * If the data has a CRS with an explicit EPSG code and the full CRS definition behind the code matches the one in GeoServer, the CRS will be already set for the data.
-* If the data has a CRS but no EPSG code, you can use the :guilabel:`Find` option on the :ref:`webadmin_layers` page to make GeoServer perform a lookup operation where the data CRS is compared against every other known CRS. If this succeeds, an EPSG code will be selected. The common case for a CRS that has no EPSG code is shapefiles whose .PRJ file contains a valid WKT string without the EPSG identifiers (as these are optional).
+* If the data has a CRS but no EPSG code, you can use the :guilabel:`Find` option on the :ref:`webadmin_data_layers` page to make GeoServer perform a lookup operation where the data CRS is compared against every other known CRS. If this succeeds, an EPSG code will be selected. The common case for a CRS that has no EPSG code is shapefiles whose .PRJ file contains a valid WKT string without the EPSG identifiers (as these are optional).
 
 If an EPSG code cannot be found, then either the data has no CRS or it is unknown to GeoServer.  In this case, there are a few options:
 

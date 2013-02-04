@@ -281,7 +281,7 @@ When finished, click :guilabel:`Save`.
 Adding layers
 -------------
 
-One the store has been loaded into GeoServer, the process for loading data layers from database tables is the same as any other database source.  Please see the :ref:`webadmin_layers` section for more information. 
+One the store has been loaded into GeoServer, the process for loading data layers from database tables is the same as any other database source.  Please see the :ref:`webadmin_data_layers` section for more information. 
 
 .. note:: Only those database tables that have spatial information and an entry in the ``SYSSPATIAL.geometry_columns`` table can be served through GeoServer.
 

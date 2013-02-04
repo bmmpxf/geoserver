@@ -3,7 +3,7 @@
 Disk Quotas
 ===========
 
-The Disk Quotas page manages the disk usage for cached tiles and allows you to set the global disk quota. Individual layer quotas can be set in the layer's :ref:`properties <webadmin_layers>` page. 
+The Disk Quotas page manages the disk usage for cached tiles and allows you to set the global disk quota. Individual layer quotas can be set in the layer's :ref:`properties <webadmin_data_layers>` page. 
 
 By default, disk usage for cached tiles is unbounded. However, this can cause disk capacity issues, especially when using Direct WMS integration (see :ref:`webadmin_tilecaching_diskquotas` for more on this). Setting a disk quota establishes disk usage limits.
 

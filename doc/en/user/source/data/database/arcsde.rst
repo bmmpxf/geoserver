@@ -164,7 +164,7 @@ The next page contains configuration options for the ArcSDE vector data store.  
      - No
      - Connection pool configuration parameters. See the :ref:`connection_pooling` section for details. 
   
-You may now add featuretypes as you would normally do, by navigating to the :guilabel:`New Layer` page, accessed from the :ref:`webadmin_layers` page in the :ref:`web_admin`.
+You may now add featuretypes as you would normally do, by navigating to the :guilabel:`New Layer` page, accessed from the :ref:`webadmin_data_layers` page in the :ref:`web_admin`.
 
 Configuring an ArcSDE vector data store with Direct Connect
 -----------------------------------------------------------
@@ -240,4 +240,4 @@ The next page contains configuration options for the ArcSDE instance.  Fill out 
      - No
      - A description of the coveragestore.
 
-You may now add coverages as you would normally do, by navigating to the **Add new layer** page, accessed from the :ref:`webadmin_layers` page in the :ref:`web_admin`.
+You may now add coverages as you would normally do, by navigating to the **Add new layer** page, accessed from the :ref:`webadmin_data_layers` page in the :ref:`web_admin`.

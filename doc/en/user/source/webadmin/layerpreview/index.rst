@@ -13,20 +13,23 @@ This page provides layer views in various output formats. A layer must be enable
 Each layer row consists of a type, name, title, and available formats for viewing.
 
 .. list-table::
+   :header-rows: 1
    :widths: 5 95 
 
-   * - **Field**
-     - **Description**
-
-   * - .. image:: ../images/data_layers_type1.png
-     - Raster (grid) layer
-   * - .. image:: ../images/data_layers_type2.png
-     - Vector (feature) layer  
+   * - Icon
+     - Geometry type
+   * - .. image:: ../images/data_layers_point.png
+     - Point  
+   * - .. image:: ../images/data_layers_line.png
+     - Line  
+   * - .. image:: ../images/data_layers_polygon.png
+     - Polygon  
+   * - .. image:: ../images/data_layers_raster.png
+     - Raster
    * - .. image:: ../images/preview_layergroup.png
      - Layer group 
 
-Name refers to the Workspace and Layer Name of a layer, while Title refers to the brief description configured in the :ref:`edit_layer_data` panel. In the following example, nurc refers to the Workspace, Arc_Sample refers to the Layer Name and "A sample ArcGrid field" is specified on the Edit Later Data panel.
-
+Name refers to the Workspace and Layer Name of a layer, while Title refers to the brief description configured in the :ref:`webadmin_data_layer_edit` panel. In the following example, nurc refers to the Workspace, Arc_Sample refers to the Layer Name and "A sample ArcGrid field" is specified on the Edit Later Data panel.
 
 .. figure:: ../images/preview_row.png
    :align: center

@@ -56,7 +56,7 @@ Click :guilabel:`Add zoom level` to generate the first zoom level. The parameter
 
 Typically each additional zoom level is twice as large in each dimension, and so contains four times as many tiles as the previous zoom level. The actual values will be populated automatically during subsequent clicking of the :guilabel:`Add zoom level` link. These defaults are usually sufficient, and you need only determine the maximum number of zoom levels desired for this gridset.
 
-When finished, click :guilabel:`Save`. Before you will be able to use this new gridset with a layer, you will need to add this gridset to the layer's list of available gridsets. This is done on an individual layer's :ref:`properties <webadmin_layers>` page. You can also add this gridset to the default list on the :ref:`webadmin_tilecaching_defaults` page.
+When finished, click :guilabel:`Save`. Before you will be able to use this new gridset with a layer, you will need to add this gridset to the layer's list of available gridsets. This is done on an individual layer's :ref:`properties <webadmin_data_layers>` page. You can also add this gridset to the default list on the :ref:`webadmin_tilecaching_defaults` page.
 
 .. figure:: img/gridsets_matrix.png
    :align: center

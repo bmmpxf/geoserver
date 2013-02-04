@@ -105,7 +105,7 @@ When finished, click :guilabel:`Save`.
 Configuring PostGIS layers
 --------------------------
 
-When properly loaded, all tables in the database will be visible to GeoServer, but they will need to be individually configured before being served by GeoServer.  See the section on :ref:`webadmin_layers` for how to add and edit new layers.
+When properly loaded, all tables in the database will be visible to GeoServer, but they will need to be individually configured before being served by GeoServer.  See the section on :ref:`webadmin_data_layers` for how to add and edit new layers.
 
 .. _postgis_loose_bbox:
 

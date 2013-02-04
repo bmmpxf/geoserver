@@ -109,7 +109,7 @@ This setting determines the default image formats that can be cached when tiled 
 
 The default settings are subdivided into vector layers, raster layers, and layer groups. You may select any of the above four formats for each of the three types of layers. Any requests that fall outside of these layer/format combinations will not be cached if sent through GeoServer, and will return an error if sent to the GeoWebCache endpoints.
 
-These defaults can be overwritten on a per-layer basis when :ref:`editing the layer properties <webadmin_layers>`.
+These defaults can be overwritten on a per-layer basis when :ref:`editing the layer properties <webadmin_data_layers>`.
 
 .. figure:: img/defaults_formats.png
    :align: center

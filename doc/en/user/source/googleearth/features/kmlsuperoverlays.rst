@@ -54,5 +54,5 @@ As with raster super-overlays, it is possible to cache vector super-overlays usi
 
 where ``GEOSERVER_URL`` is the URL of your GeoServer instance.
 
-Unlike generating a super-overlay with the standard :ref:`ge_feature_kml_reflector`, it is not possible to specify the regionation properties as part of the URL. These parameters must be set in the :ref:`webadmin_layers` configuration which can be navigated to by clicking on 'Layers' in the left hand sidebar and then selecting your vector layer.
+Unlike generating a super-overlay with the standard :ref:`ge_feature_kml_reflector`, it is not possible to specify the regionation properties as part of the URL. These parameters must be set in the :ref:`webadmin_data_layers` configuration which can be navigated to by clicking on 'Layers' in the left hand sidebar and then selecting your vector layer.
 
