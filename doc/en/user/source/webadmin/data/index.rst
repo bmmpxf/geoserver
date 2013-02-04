@@ -35,6 +35,6 @@ Specific details for adding, editing and deleting various data types are discuss
 
    workspaces
    stores
-   layers
+   layers/index
    layergroups
    styles
