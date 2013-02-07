@@ -13,3 +13,4 @@ Web Map Service
    configuration
    global
    get_legend_graphic/legendgraphic
+   dimensions
